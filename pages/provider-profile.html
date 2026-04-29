@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surya Art Studio — Karya Lokal</title>
+  <link rel="stylesheet" href="../dist/output.css" />
+  <script src="../assets/js/session.js"></script>
+  <script>(function(){if(!window.KL||!window.KL.requireLogin())return;}());</script>
+  <style>
+    /* Cover overlay */
+    .cover-overlay {
+      background: rgba(29, 18, 14, 0.5);
+    }
+
+    /* Portfolio masonry grid */
+    .portfolio-masonry {
+      columns: 1;
+      column-gap: 1.25rem;
+    }
+    @media (min-width: 640px) {
+      .portfolio-masonry { columns: 2; }
+    }
+    @media (min-width: 1024px) {
+      .portfolio-masonry { columns: 3; }
+    }
+    .portfolio-masonry > article {
+      break-inside: avoid;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Portfolio item hover overlay */
+    .portfolio-item .overlay {
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
+    .portfolio-item:hover .overlay {
+      opacity: 1;
+    }
+    .portfolio-item:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Tab underline indicator */
+    .tab-btn.active {
+      color: #9f4016;
+      border-bottom-color: #9f4016;
+    }
+
+    /* Stat card accent */
+    .stat-card:nth-child(1) .stat-icon { background-color: #fff4ef; color: #9f4016; }
+    .stat-card:nth-child(2) .stat-icon { background-color: #f5eee8; color: #4f2c1d; }
+    .stat-card:nth-child(3) .stat-icon { background-color: #fff4ef; color: #c45320; }
+    .stat-card:nth-child(4) .stat-icon { background-color: #f5eee8; color: #9f4016; }
+
+    /* Review star fill */
+    .star-filled { color: #b98a50; }
+    .star-empty  { color: #ddc0aa; }
+
+    /* Skill badge */
+    .skill-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.3rem 0.85rem;
+      border-radius: 9999px;
+      border: 1.5px solid rgba(29,18,14,0.1);
+      background: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #4f2c1d;
+      transition: background 200ms, border-color 200ms;
+    }
+    .skill-badge:hover {
+      background: #fff4ef;
+      border-color: #de6a32;
+      color: #9f4016;
+    }
+
+    /* Sticky sidebar */
+    @media (min-width: 1024px) {
+      .sticky-sidebar {
+        position: sticky;
+        top: 5.5rem;
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body data-page="provider-profile">
+
+  <main id="profile-main" class="pb-24">
+
+    <!-- ░░ COVER HERO ░░ -->
+    <div class="relative h-56 w-full overflow-hidden sm:h-72 lg:h-80" data-reveal="1">
+      <img
+        class="h-full w-full object-cover"
+        src="../assets/images/explore/commission-main.png"
+        alt="Cover Surya Art Studio"
+      />
+      <div class="cover-overlay absolute inset-0"></div>
+
+      <!-- Breadcrumb over cover -->
+      <nav class="absolute left-0 right-0 top-5 px-4 sm:px-8 lg:px-12" aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-2 text-sm text-white/80">
+          <li><a class="transition hover:text-white" href="../index.html">Beranda</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a class="transition hover:text-white" href="services.html">Jasa Kreasi</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="font-semibold text-white" aria-current="page">Surya Art Studio</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="shell">
+
+      <!-- ░░ PROFILE HEADER ░░ -->
+      <div class="relative -mt-16 mb-8" data-reveal style="--reveal-delay: 0.06s">
+        <div class="panel-solid px-6 pt-6 pb-7 sm:px-8 sm:pb-8">
+          <div class="flex flex-col gap-6 sm:flex-row sm:items-end">
+
+            <!-- Avatar -->
+            <div class="relative shrink-0 -mt-14 sm:-mt-16">
+              <img
+                class="h-28 w-28 rounded-[1.75rem] border-4 border-white object-cover shadow-card sm:h-32 sm:w-32"
+                src="../assets/images/0a786b17ad9c47ca2d8136bacb46d840c330f804.png"
+                alt="Foto profil Surya Art Studio"
+              />
+              <!-- Online badge -->
+              <span class="absolute bottom-1 right-1 flex h-4 w-4 items-center justify-center rounded-full border-2 border-white bg-success" aria-label="Sedang online">
+                <span class="sr-only">Online</span>
+              </span>
+            </div>
+
+            <!-- Identity -->
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3">
+                <h1 class="font-display text-3xl tracking-[-0.04em] text-cocoa-900 sm:text-4xl">Surya Art Studio</h1>
+                <!-- Verified badge -->
+                <span class="flex items-center gap-1.5 rounded-full bg-clay-50 px-3 py-1 text-xs font-semibold text-clay-700">
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M16.403 12.652a3 3 0 0 0 0-5.304 3 3 0 0 0-3.75-3.751 3 3 0 0 0-5.305 0 3 3 0 0 0-3.751 3.75 3 3 0 0 0 0 5.305 3 3 0 0 0 3.75 3.751 3 3 0 0 0 5.305 0 3 3 0 0 0 3.751-3.75Zm-2.546-4.46a.75.75 0 0 0-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/>
+                  </svg>
+                  Verified Creator
+                </span>
+              </div>
+              <p class="mt-1 text-base font-medium text-muted">Ilustrator Realis &amp; Karakter · Bandung, Jawa Barat</p>
+              <div class="mt-3 flex flex-wrap items-center gap-4 text-sm text-muted">
+                <span class="flex items-center gap-1.5">
+                  <!-- star icon -->
+                  <svg class="h-4 w-4 text-gold" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                  <strong class="text-cocoa-900">4.9</strong> (127 ulasan)
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <!-- briefcase icon -->
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2ZM14 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                  248 proyek selesai
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <!-- clock icon -->
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="8"/><path stroke-linecap="round" stroke-linejoin="round" d="M10 6v4l3 2"/></svg>
+                  Respons &lt; 1 jam
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <!-- calendar icon -->
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="16" height="14" rx="2"/><path stroke-linecap="round" d="M2 8h16M6 2v4M14 2v4"/></svg>
+                  Bergabung Maret 2021
+                </span>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="flex flex-col gap-3 sm:items-end">
+              <a class="btn--primary min-w-[160px] text-center" href="#services-section">Sewa Jasa</a>
+              <button class="btn--light min-w-[160px] cursor-pointer text-center" type="button" data-open-service-chat aria-label="Kirim pesan">Kirim Pesan</button>
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="mt-6 flex flex-wrap gap-2" aria-label="Keahlian">
+            <span class="skill-badge">Ilustrasi Realis</span>
+            <span class="skill-badge">Character Design</span>
+            <span class="skill-badge">Digital Painting</span>
+            <span class="skill-badge">Watercolor Digital</span>
+            <span class="skill-badge">Concept Art</span>
+            <span class="skill-badge">Portrait</span>
+            <span class="skill-badge">Fan Art</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ░░ STATS ROW ░░ -->
+      <div class="mb-8 grid grid-cols-2 gap-4 sm:grid-cols-4" data-reveal style="--reveal-delay: 0.1s">
+        <div class="stat-card panel-solid flex items-center gap-4 px-5 py-5">
+          <div class="stat-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl">
+            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.83-4.401Z"/></svg>
+          </div>
+          <div>
+            <p class="text-2xl font-bold text-cocoa-900">4.9</p>
+            <p class="text-xs text-muted">Rating</p>
+          </div>
+        </div>
+
+        <div class="stat-card panel-solid flex items-center gap-4 px-5 py-5">
+          <div class="stat-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl">
+            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+          </div>
+          <div>
+            <p class="text-2xl font-bold text-cocoa-900">248</p>
+            <p class="text-xs text-muted">Proyek Selesai</p>
+          </div>
+        </div>
+
+        <div class="stat-card panel-solid flex items-center gap-4 px-5 py-5">
+          <div class="stat-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl">
+            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"/></svg>
+          </div>
+          <div>
+            <p class="text-2xl font-bold text-cocoa-900">127</p>
+            <p class="text-xs text-muted">Ulasan</p>
+          </div>
+        </div>
+
+        <div class="stat-card panel-solid flex items-center gap-4 px-5 py-5">
+          <div class="stat-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl">
+            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+          </div>
+          <div>
+            <p class="text-2xl font-bold text-cocoa-900">&lt; 1 jam</p>
+            <p class="text-xs text-muted">Avg. Respons</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ░░ MAIN CONTENT ░░ -->
+      <div class="grid gap-8 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_360px]">
+
+        <!-- Left column -->
+        <div class="space-y-8">
+
+          <!-- Tabs -->
+          <div class="border-b border-cocoa-900/10" data-reveal style="--reveal-delay: 0.12s">
+            <div class="flex gap-0 overflow-x-auto" role="tablist" aria-label="Konten profil">
+              <button
+                class="tab-btn active shrink-0 border-b-2 border-transparent px-5 py-3 text-sm font-semibold text-cocoa-900 transition-colors duration-200 cursor-pointer"
+                role="tab" aria-selected="true" aria-controls="tab-portfolio" id="tab-portfolio-btn"
+                type="button" data-tab="portfolio"
+              >Portofolio</button>
+              <button
+                class="tab-btn shrink-0 border-b-2 border-transparent px-5 py-3 text-sm font-semibold text-muted transition-colors duration-200 cursor-pointer hover:text-cocoa-900"
+                role="tab" aria-selected="false" aria-controls="tab-about" id="tab-about-btn"
+                type="button" data-tab="about"
+              >Tentang</button>
+              <button
+                class="tab-btn shrink-0 border-b-2 border-transparent px-5 py-3 text-sm font-semibold text-muted transition-colors duration-200 cursor-pointer hover:text-cocoa-900"
+                role="tab" aria-selected="false" aria-controls="tab-reviews" id="tab-reviews-btn"
+                type="button" data-tab="reviews"
+              >Ulasan (127)</button>
+            </div>
+          </div>
+
+          <!-- Tab: Portofolio -->
+          <section id="tab-portfolio" role="tabpanel" aria-labelledby="tab-portfolio-btn" data-reveal style="--reveal-delay: 0.16s">
+            <!-- Category filter chips -->
+            <div class="mb-5 flex flex-wrap gap-2">
+              <button class="chip active cursor-pointer" type="button" data-portfolio-filter="semua">Semua</button>
+              <button class="chip cursor-pointer" type="button" data-portfolio-filter="realis">Realis</button>
+              <button class="chip cursor-pointer" type="button" data-portfolio-filter="karakter">Karakter</button>
+              <button class="chip cursor-pointer" type="button" data-portfolio-filter="watercolor">Watercolor</button>
+              <button class="chip cursor-pointer" type="button" data-portfolio-filter="konsep">Concept Art</button>
+            </div>
+
+            <!-- Masonry portfolio grid -->
+            <div class="portfolio-masonry">
+
+              <article class="portfolio-item group relative cursor-pointer overflow-hidden rounded-[1.5rem] shadow-soft" data-portfolio-tag="realis">
+                <img
+                  loading="lazy"
+                  class="w-full object-cover transition-transform duration-300"
+                  src="../assets/images/0bfe8a25be9b1574ac37c77c1068bf2566685320.png"
+                  alt="Ilustrasi wajah realis — Potret wanita Jawa"
+                />
+                <div class="overlay absolute inset-0 flex flex-col justify-end bg-cocoa-900/65 p-4">
+                  <h3 class="text-sm font-semibold text-white">Potret Wanita Jawa</h3>
+                  <p class="mt-0.5 text-xs text-white/70">Realis · Pensil Digital</p>
+                </div>
+              </article>
+
+              <article class="portfolio-item group relative cursor-pointer overflow-hidden rounded-[1.5rem] shadow-soft" data-portfolio-tag="karakter">
+                <img
+                  loading="lazy"
+                  class="w-full object-cover transition-transform duration-300"
+                  src="../assets/images/b175be3288918b1740487725749bb77976010078.png"
+                  alt="Karakter anime full body baju tradisional"
+                />
+                <div class="overlay absolute inset-0 flex flex-col justify-end bg-cocoa-900/65 p-4">
+                  <h3 class="text-sm font-semibold text-white">Character Kebaya Modern</h3>
+                  <p class="mt-0.5 text-xs text-white/70">Karakter · Anime Style</p>
+                </div>
+              </article>
+
+              <article class="portfolio-item group relative cursor-pointer overflow-hidden rounded-[1.5rem] shadow-soft" data-portfolio-tag="watercolor">
+                <img
+                  loading="lazy"
+                  class="w-full object-cover transition-transform duration-300"
+                  src="../assets/images/2db159e91dfe7ca806ae7ad767ea0142e75bd374.png"
+                  alt="Ilustrasi watercolor undangan pernikahan"
+                />
+                <div class="overlay absolute inset-0 flex flex-col justify-end bg-cocoa-900/65 p-4">
+                  <h3 class="text-sm font-semibold text-white">Wedding Watercolor Invite</h3>
+                  <p class="mt-0.5 text-xs text-white/70">Watercolor · Undangan</p>
+                </div>
+              </article>
+
+              <article class="portfolio-item group relative cursor-pointer overflow-hidden rounded-[1.5rem] shadow-soft" data-portfolio-tag="konsep">
+                <img
+                  loading="lazy"
+                  class="w-full object-cover transition-transform duration-300"
+                  src="../assets/images/explore/commission-main.png"
+                  alt="Concept art karakter fantasi"
+                />
+                <div class="overlay absolute inset-0 flex flex-col justify-end bg-cocoa-900/65 p-4">
+                  <h3 class="text-sm font-semibold text-white">Concept Art — Dewa Angin</h3>
+                  <p class="mt-0.5 text-xs text-white/70">Concept Art · Mitologi</p>
+                </div>
+              </article>
+
+              <article class="portfolio-item group relative cursor-pointer overflow-hidden rounded-[1.5rem] shadow-soft" data-portfolio-tag="realis">
+                <img
+                  loading="lazy"
+                  class="w-full object-cover transition-transform duration-300"
+                  src="../assets/images/9ab933d51d82d72684a56b37945b280ce85af9c7.png"
+                  alt="Potret realis pria dengan kain batik"
+                />
+                <div class="overlay absolute inset-0 flex flex-col justify-end bg-cocoa-900/65 p-4">
+                  <h3 class="text-sm font-semibold text-white">Bapak Batik Solo</h3>
+                  <p class="mt-0.5 text-xs text-white/70">Realis · Portrait</p>
+                </div>
+              </article>
+
+              <article class="portfolio-item group relative cursor-pointer overflow-hidden rounded-[1.5rem] shadow-soft" data-portfolio-tag="karakter">
+                <img
+                  loading="lazy"
+                  class="w-full object-cover transition-transform duration-300"
+                  src="../assets/images/dfddcca739dac8c74aa01423424a9277624961b5.png"
+                  alt="Chibi character design untuk konten kreator"
+                />
+                <div class="overlay absolute inset-0 flex flex-col justify-end bg-cocoa-900/65 p-4">
+                  <h3 class="text-sm font-semibold text-white">Chibi Vtuber OC</h3>
+                  <p class="mt-0.5 text-xs text-white/70">Karakter · Chibi</p>
+                </div>
+              </article>
+
+              <article class="portfolio-item group relative cursor-pointer overflow-hidden rounded-[1.5rem] shadow-soft" data-portfolio-tag="watercolor">
+                <img
+                  loading="lazy"
+                  class="w-full object-cover transition-transform duration-300"
+                  src="../assets/images/64baf6bfb50ffbe62b3dbb2617d1de675826e7cf.png"
+                  alt="Ilustrasi landscape watercolor danau Toba"
+                />
+                <div class="overlay absolute inset-0 flex flex-col justify-end bg-cocoa-900/65 p-4">
+                  <h3 class="text-sm font-semibold text-white">Danau Toba Dusk</h3>
+                  <p class="mt-0.5 text-xs text-white/70">Watercolor · Landscape</p>
+                </div>
+              </article>
+
+              <article class="portfolio-item group relative cursor-pointer overflow-hidden rounded-[1.5rem] shadow-soft" data-portfolio-tag="konsep">
+                <img
+                  loading="lazy"
+                  class="w-full object-cover transition-transform duration-300"
+                  src="../assets/images/3356f79928bd4afcb126581479e6d5a44c953307.png"
+                  alt="Environment concept art hutan Kalimantan"
+                />
+                <div class="overlay absolute inset-0 flex flex-col justify-end bg-cocoa-900/65 p-4">
+                  <h3 class="text-sm font-semibold text-white">Hutan Kalimantan — Env.</h3>
+                  <p class="mt-0.5 text-xs text-white/70">Concept Art · Environment</p>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- Load more -->
+            <div class="mt-6 text-center">
+              <button class="btn--light cursor-pointer" type="button" id="load-more-portfolio">
+                Tampilkan Lebih Banyak
+              </button>
+            </div>
+          </section>
+
+          <!-- Tab: Tentang -->
+          <section id="tab-about" role="tabpanel" aria-labelledby="tab-about-btn" hidden>
+            <div class="space-y-6">
+
+              <!-- Bio -->
+              <div class="panel-solid px-6 py-6">
+                <h2 class="text-lg font-semibold text-cocoa-900">Tentang Saya</h2>
+                <p class="mt-3 text-base leading-8 text-muted">
+                  Halo! Saya Surya, ilustrator freelance dengan spesialisasi di ilustrasi realis dan karakter. Sudah lebih dari 4 tahun saya mengerjakan commission mulai dari portrait personal, karakter game, hingga ilustrasi buku cerita anak.
+                </p>
+                <p class="mt-3 text-base leading-8 text-muted">
+                  Saya percaya bahwa setiap karya harus punya "jiwa" — tidak hanya indah secara teknis, tapi juga mampu menyampaikan emosi yang tepat. Brief yang jelas dan komunikasi aktif adalah kunci kolaborasi yang menyenangkan.
+                </p>
+              </div>
+
+              <!-- Education & Background -->
+              <div class="panel-solid px-6 py-6">
+                <h2 class="text-lg font-semibold text-cocoa-900">Latar Belakang</h2>
+                <ul class="mt-4 space-y-4">
+                  <li class="flex items-start gap-4">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-clay-50 text-clay-700">
+                      <!-- academic cap icon -->
+                      <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-cocoa-900">S1 Seni Rupa — Institut Teknologi Bandung (ITB)</p>
+                      <p class="text-sm text-muted">Lulus 2020 · Jurusan Seni Murni, konsentrasi Ilustrasi</p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-clay-50 text-clay-700">
+                      <!-- briefcase icon -->
+                      <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2ZM14 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-cocoa-900">Illustrator In-House — Studio Wayang Kreasi</p>
+                      <p class="text-sm text-muted">2020 – 2022 · Desain karakter untuk animasi pendek budaya lokal</p>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-clay-50 text-clay-700">
+                      <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z"/></svg>
+                    </div>
+                    <div>
+                      <p class="font-semibold text-cocoa-900">Freelancer Independen — Karya Lokal</p>
+                      <p class="text-sm text-muted">2022 – Sekarang · Commission ilustrasi, karakter, dan konsep seni</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Tools used -->
+              <div class="panel-solid px-6 py-6">
+                <h2 class="text-lg font-semibold text-cocoa-900">Tools & Software</h2>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span class="skill-badge">Procreate</span>
+                  <span class="skill-badge">Adobe Photoshop</span>
+                  <span class="skill-badge">Clip Studio Paint</span>
+                  <span class="skill-badge">Krita</span>
+                  <span class="skill-badge">Adobe Illustrator</span>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Tab: Ulasan -->
+          <section id="tab-reviews" role="tabpanel" aria-labelledby="tab-reviews-btn" hidden>
+            <div class="space-y-4">
+
+              <!-- Rating summary -->
+              <div class="panel-glass px-6 py-6">
+                <div class="flex flex-col gap-6 sm:flex-row sm:items-center">
+                  <div class="text-center sm:shrink-0">
+                    <p class="font-display text-6xl font-bold tracking-tight text-cocoa-900">4.9</p>
+                    <div class="mt-2 flex justify-center gap-0.5" aria-label="Rating 4.9 dari 5">
+                      <svg class="h-5 w-5 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                      <svg class="h-5 w-5 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                      <svg class="h-5 w-5 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                      <svg class="h-5 w-5 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                      <svg class="h-5 w-5 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                    </div>
+                    <p class="mt-1 text-sm text-muted">127 ulasan</p>
+                  </div>
+                  <div class="flex-1 space-y-2">
+                    <div class="flex items-center gap-3">
+                      <span class="w-3 text-right text-xs text-muted">5</span>
+                      <div class="h-2 flex-1 overflow-hidden rounded-full bg-sand-200"><div class="h-full rounded-full bg-clay-500" style="width:88%"></div></div>
+                      <span class="w-8 text-right text-xs text-muted">88%</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="w-3 text-right text-xs text-muted">4</span>
+                      <div class="h-2 flex-1 overflow-hidden rounded-full bg-sand-200"><div class="h-full rounded-full bg-clay-500" style="width:9%"></div></div>
+                      <span class="w-8 text-right text-xs text-muted">9%</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="w-3 text-right text-xs text-muted">3</span>
+                      <div class="h-2 flex-1 overflow-hidden rounded-full bg-sand-200"><div class="h-full rounded-full bg-clay-500" style="width:2%"></div></div>
+                      <span class="w-8 text-right text-xs text-muted">2%</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="w-3 text-right text-xs text-muted">2</span>
+                      <div class="h-2 flex-1 overflow-hidden rounded-full bg-sand-200"><div class="h-full rounded-full bg-clay-500" style="width:1%"></div></div>
+                      <span class="w-8 text-right text-xs text-muted">1%</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <span class="w-3 text-right text-xs text-muted">1</span>
+                      <div class="h-2 flex-1 overflow-hidden rounded-full bg-sand-200"><div class="h-full rounded-full bg-clay-500" style="width:0%"></div></div>
+                      <span class="w-8 text-right text-xs text-muted">0%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Individual reviews -->
+              <article class="panel-solid px-6 py-5">
+                <div class="flex items-start gap-4">
+                  <img class="h-10 w-10 shrink-0 rounded-full object-cover" src="../assets/images/topbar-avatar.png" alt="Rania" />
+                  <div class="flex-1">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                      <div>
+                        <p class="font-semibold text-cocoa-900">Rania K.</p>
+                        <p class="text-xs text-muted">Ilustrasi Portrait · 2 minggu lalu</p>
+                      </div>
+                      <div class="flex gap-0.5" aria-label="Rating 5 dari 5">
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                      </div>
+                    </div>
+                    <p class="mt-3 text-sm leading-7 text-muted">Hasilnya luar biasa! Detail wajahnya sangat mirip dan ekspresinya persis seperti yang aku minta. Komunikasinya juga enak banget, responsif dan sabar. Ini sudah kali ketiga aku pakai jasanya.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="panel-solid px-6 py-5">
+                <div class="flex items-start gap-4">
+                  <img class="h-10 w-10 shrink-0 rounded-full object-cover" src="../assets/images/45c1b9ce24d767168e8a6917143a8d3ff8224b2f.png" alt="Dika" />
+                  <div class="flex-1">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                      <div>
+                        <p class="font-semibold text-cocoa-900">Dika Pratama</p>
+                        <p class="text-xs text-muted">Character Design · 1 bulan lalu</p>
+                      </div>
+                      <div class="flex gap-0.5" aria-label="Rating 5 dari 5">
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                        <svg class="h-4 w-4 star-empty" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                      </div>
+                    </div>
+                    <p class="mt-3 text-sm leading-7 text-muted">Desain karakternya keren banget, sesuai referensi yang aku kasih. Proses revisi juga cepat dan tidak minta biaya tambahan. Rekomen buat yang butuh karakter game atau visual novel!</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="panel-solid px-6 py-5">
+                <div class="flex items-start gap-4">
+                  <img class="h-10 w-10 shrink-0 rounded-full object-cover" src="../assets/images/970ca51f6e5bd7482ecaf867242a53fb6b7dd6bd.png" alt="Sinta" />
+                  <div class="flex-1">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                      <div>
+                        <p class="font-semibold text-cocoa-900">Sinta Dewi</p>
+                        <p class="text-xs text-muted">Ilustrasi Undangan · 2 bulan lalu</p>
+                      </div>
+                      <div class="flex gap-0.5" aria-label="Rating 5 dari 5">
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                        <svg class="h-4 w-4 star-filled" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.3l2 4.1 4.5.7-3.3 3.2.8 4.5L8 11.5l-4 2.3.8-4.5L1.5 6.1l4.5-.7z"/></svg>
+                      </div>
+                    </div>
+                    <p class="mt-3 text-sm leading-7 text-muted">Undangan watercolor kami jadi cantik banget! Tamu-tamu di pesta banyak yang tanya siapa illustratornya. Beliau sabar banget ngikutin moodboard yang kami minta. Worth every penny!</p>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+        </div>
+
+        <!-- ░░ RIGHT SIDEBAR — Services ░░ -->
+        <aside class="sticky-sidebar space-y-5" id="services-section" data-reveal style="--reveal-delay: 0.14s">
+
+          <!-- Availability indicator -->
+          <div class="panel-glass px-5 py-4">
+            <div class="flex items-center gap-3">
+              <span class="relative flex h-3 w-3 shrink-0">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-60"></span>
+                <span class="relative inline-flex h-3 w-3 rounded-full bg-success"></span>
+              </span>
+              <p class="text-sm font-semibold text-cocoa-900">Tersedia untuk commission baru</p>
+            </div>
+            <p class="mt-1.5 pl-6 text-xs text-muted">Estimasi pengerjaan 5–10 hari kerja</p>
+          </div>
+
+          <!-- Service package: Sketch -->
+          <div class="panel-solid overflow-hidden">
+            <div class="bg-sand-100 px-5 py-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-clay-700">Paket Dasar</span>
+                <strong class="text-xl font-bold text-cocoa-900">Rp 150rb</strong>
+              </div>
+              <h3 class="mt-1.5 text-base font-semibold text-cocoa-900">Sketch &amp; Lineart</h3>
+            </div>
+            <div class="px-5 py-5">
+              <ul class="space-y-2.5 text-sm text-muted">
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  1 karakter, 1 pose
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  Hitam &amp; Putih
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  2x revisi
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  Pengiriman 3–5 hari
+                </li>
+              </ul>
+              <button class="btn--primary mt-5 w-full cursor-pointer" type="button" data-open-service-chat>Pesan Paket Ini</button>
+            </div>
+          </div>
+
+          <!-- Service package: Full Color -->
+          <div class="panel-solid overflow-hidden ring-2 ring-clay-500">
+            <div class="bg-clay-500 px-5 py-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-clay-100">Paling Populer</span>
+                <strong class="text-xl font-bold text-white">Rp 350rb</strong>
+              </div>
+              <h3 class="mt-1.5 text-base font-semibold text-white">Full Color Illustration</h3>
+            </div>
+            <div class="px-5 py-5">
+              <ul class="space-y-2.5 text-sm text-muted">
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  1 karakter, full body
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  Full color + background sederhana
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  3x revisi
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  File PNG + PSD
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  Pengiriman 5–7 hari
+                </li>
+              </ul>
+              <button class="btn--primary mt-5 w-full cursor-pointer" type="button" data-open-service-chat>Pesan Paket Ini</button>
+            </div>
+          </div>
+
+          <!-- Service package: Premium -->
+          <div class="panel-solid overflow-hidden">
+            <div class="bg-cocoa-800 px-5 py-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-[0.2em] text-sand-300">Paket Premium</span>
+                <strong class="text-xl font-bold text-white">Rp 750rb</strong>
+              </div>
+              <h3 class="mt-1.5 text-base font-semibold text-white">Concept Art &amp; Multi-Scene</h3>
+            </div>
+            <div class="px-5 py-5">
+              <ul class="space-y-2.5 text-sm text-muted">
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  Hingga 3 karakter
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  Background detail penuh
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  Revisi tidak terbatas
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  File PNG + PSD + source
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="h-4 w-4 shrink-0 text-success" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M12.416 3.376a.75.75 0 0 1 .208 1.04l-5 7.5a.75.75 0 0 1-1.154.114l-3-3a.75.75 0 0 1 1.06-1.06l2.353 2.353 4.493-6.74a.75.75 0 0 1 1.04-.207Z" clip-rule="evenodd"/></svg>
+                  Pengiriman 10–14 hari
+                </li>
+              </ul>
+              <button class="btn--light mt-5 w-full cursor-pointer" type="button" data-open-service-chat>Pesan Paket Ini</button>
+            </div>
+          </div>
+
+          <!-- Custom brief CTA -->
+          <div class="panel-glass px-5 py-5 text-center">
+            <p class="text-sm font-semibold text-cocoa-900">Ada kebutuhan yang lebih spesifik?</p>
+            <p class="mt-1.5 text-xs leading-6 text-muted">Diskusikan brief kustom dan dapatkan penawaran yang sesuai.</p>
+            <button class="btn--light mt-4 w-full cursor-pointer" type="button" data-open-service-chat>Diskusi Custom Brief</button>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- ░░ FOOTER ░░ -->
+  <footer class="border-t border-white/60 bg-white/70 py-12 backdrop-blur">
+    <div class="shell grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+      <div>
+        <a class="flex items-center gap-3 text-cocoa-900" href="../index.html">
+          <img class="h-7 w-7" src="../assets/icons/logo-bag.svg" alt="" aria-hidden="true" />
+          <span class="font-display text-3xl leading-none tracking-[-0.04em]">Karya Lokal</span>
+        </a>
+        <p class="mt-5 text-sm leading-8 text-muted">+62 812 1742 4813<br />Jl Airlangga No.4 - 6, Surabaya<br />info@kinbo.com</p>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-[0.22em] text-cocoa-900">Layanan</h3>
+        <ul class="mt-4 space-y-3 text-sm text-muted">
+          <li><a class="hover:text-clay-700 transition" href="marketplace.html">Cara Belanja</a></li>
+          <li><a class="hover:text-clay-700 transition" href="services.html">Pengiriman</a></li>
+          <li><a class="hover:text-clay-700 transition" href="settings/settings.html">Refund</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-[0.22em] text-cocoa-900">Tentang Kami</h3>
+        <ul class="mt-4 space-y-3 text-sm text-muted">
+          <li><a class="hover:text-clay-700 transition" href="../index.html">Blog</a></li>
+          <li><a class="hover:text-clay-700 transition" href="explore.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-[0.22em] text-cocoa-900">Langganan</h3>
+        <p class="mt-4 text-sm leading-7 text-muted">Dapatkan update jasa dan penawaran kolaborasi terbaru.</p>
+        <form class="mt-4 flex flex-col gap-3" data-inline-form="newsletter">
+          <input class="field-input rounded-full border border-cocoa-900/10 bg-white px-4 py-3 shadow-soft" type="email" placeholder="Email Anda" required aria-label="Alamat email" />
+          <button class="btn--primary" type="submit">Kirim</button>
+        </form>
+      </div>
+    </div>
+    <div class="shell mt-10 flex flex-col gap-3 border-t border-cocoa-900/8 pt-6 text-sm text-muted sm:flex-row sm:justify-between">
+      <span>Privacy Policy</span>
+      <span>Terms of Service</span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/cart-store.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Tab switching
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        tabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        tabPanels.forEach(p => p.hidden = true);
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        document.getElementById('tab-' + target).hidden = false;
+      });
+    });
+
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('[data-portfolio-filter]');
+    const portfolioItems = document.querySelectorAll('[data-portfolio-tag]');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tag = btn.dataset.portfolioFilter;
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        portfolioItems.forEach(item => {
+          if (tag === 'semua' || item.dataset.portfolioTag === tag) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

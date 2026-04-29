@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lelang Aktif — Karya Lokal Seller</title>
+  <link rel="stylesheet" href="../../dist/output.css" />
+  <script src="../../assets/js/session.js"></script>
+  <script>window.KL && window.KL.requireSeller();</script>
+</head>
+<body class="seller-dashboard-page bg-[#f7f3ef] text-cocoa-900" data-page="seller-auctions" data-font="manrope">
+  <main class="min-h-screen lg:grid lg:grid-cols-[292px_minmax(0,1fr)]">
+    <aside class="border-b border-cocoa-900/8 bg-white/95 px-5 py-5 lg:sticky lg:top-0 lg:h-screen lg:border-b-0 lg:border-r lg:px-6">
+      <a class="flex items-center gap-3 text-cocoa-900" href="../../index.html" aria-label="Karya Lokal">
+        <img class="h-10 w-10" src="../../assets/icons/logo-bag.svg" alt="" aria-hidden="true" />
+        <span class="text-2xl font-extrabold leading-6 tracking-[-0.04em]">Karya<br />Lokal</span>
+      </a>
+      <nav class="mt-6 flex gap-2 overflow-x-auto pb-2 lg:mt-10 lg:block lg:space-y-2 lg:overflow-visible lg:pb-0" aria-label="Navigasi seller">
+        <a class="inline-flex min-h-12 shrink-0 items-center gap-3 rounded-2xl px-4 text-sm font-bold text-muted transition hover:bg-clay-50 hover:text-clay-700 lg:w-full" href="dashboard.html">
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 3h5v5H3V3Zm9 0h5v5h-5V3ZM3 12h5v5H3v-5Zm9 0h5v5h-5v-5Z" stroke="currentColor" stroke-width="1.7"/></svg>
+          Overview
+        </a>
+        <a class="inline-flex min-h-12 shrink-0 items-center gap-3 rounded-2xl px-4 text-sm font-bold text-muted transition hover:bg-clay-50 hover:text-clay-700 lg:w-full" href="seller-orders.html">
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 4h10l1 13H4L5 4Z" stroke="currentColor" stroke-width="1.7"/><path d="M7 7V5a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.7"/></svg>
+          Pesanan Masuk
+        </a>
+        <a class="inline-flex min-h-12 shrink-0 items-center gap-3 rounded-2xl px-4 text-sm font-bold text-muted transition hover:bg-clay-50 hover:text-clay-700 lg:w-full" href="seller-customers.html">
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7.5 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM2.5 17a5 5 0 0 1 10 0M14 9.5a2.5 2.5 0 1 0 0-5M13.5 13a4.5 4.5 0 0 1 4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Customer
+        </a>
+        <a class="inline-flex min-h-12 shrink-0 items-center gap-3 rounded-2xl px-4 text-sm font-bold text-muted transition hover:bg-clay-50 hover:text-clay-700 lg:w-full" href="seller-products.html">
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          Katalog Produk
+        </a>
+        <a class="inline-flex min-h-12 shrink-0 items-center gap-3 rounded-2xl bg-cocoa-900 px-4 text-sm font-bold text-white lg:w-full" href="seller-auctions.html" aria-current="page">
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 4h6m-7 8h8M8 4v8m4-8v8M5 16h10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="m6 12-2 2m10-2 2 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          Lelang Aktif
+        </a>
+        <a class="inline-flex min-h-12 shrink-0 items-center gap-3 rounded-2xl px-4 text-sm font-bold text-muted transition hover:bg-clay-50 hover:text-clay-700 lg:w-full" href="../settings/settings.html">
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.7"/><path d="M10 2v3m0 10v3M2 10h3m10 0h3M4.3 4.3l2.1 2.1m7.2 7.2 2.1 2.1M4.3 15.7l2.1-2.1m7.2-7.2 2.1-2.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          Pengaturan
+        </a>
+      </nav>
+      <button class="mt-8 hidden min-h-11 w-full rounded-2xl border border-red-100 bg-red-50 px-4 text-sm font-bold text-red-600 transition hover:bg-red-100 lg:block" type="button" data-seller-logout>Keluar</button>
+    </aside>
+
+    <section class="px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+      <header class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-clay-700">Auction Room</p>
+          <h1 class="mt-3 text-4xl font-semibold tracking-[-0.05em] text-cocoa-900">Lelang Aktif</h1>
+          <p class="mt-3 max-w-2xl text-sm leading-7 text-muted">Pantau bid, waktu tersisa, dan item lelang yang performanya paling tinggi.</p>
+        </div>
+        <div class="flex items-center gap-3 rounded-2xl bg-white px-3 py-2 shadow-soft">
+          <span class="flex h-11 w-11 items-center justify-center rounded-full bg-clay-50 text-sm font-extrabold text-clay-700" data-seller-initial>B</span>
+          <div class="pr-2">
+            <p class="text-sm font-extrabold text-cocoa-900" data-seller-name>Budi Santoso</p>
+            <p class="text-xs text-muted" data-seller-email>seller@karyalokal.id</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="mt-7 grid gap-6 xl:grid-cols-2">
+        <article class="overflow-hidden rounded-[1.75rem] bg-white shadow-soft">
+          <img class="h-64 w-full object-cover" src="../../assets/images/df76563238df56947a3b7ac4b3423243b5643aed.png" alt="Batik Tulis Parang Barong" />
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700"><i class="h-2 w-2 rounded-full bg-emerald-500"></i>Live</span>
+                <h2 class="mt-4 text-2xl font-extrabold tracking-[-0.03em] text-cocoa-900">Batik Tulis Parang Barong</h2>
+              </div>
+              <span class="rounded-2xl bg-clay-50 px-4 py-2 text-sm font-extrabold text-clay-700">22 bid</span>
+            </div>
+            <div class="mt-6 grid grid-cols-3 gap-3">
+              <div class="rounded-2xl bg-sand-50 p-4"><p class="text-xs font-bold text-muted">Tawaran</p><strong class="mt-2 block text-lg text-clay-700">Rp 12.500.000</strong></div>
+              <div class="rounded-2xl bg-sand-50 p-4"><p class="text-xs font-bold text-muted">Sisa waktu</p><strong class="mt-2 block text-lg text-cocoa-900">04:28:12</strong></div>
+              <div class="rounded-2xl bg-sand-50 p-4"><p class="text-xs font-bold text-muted">Watcher</p><strong class="mt-2 block text-lg text-cocoa-900">156</strong></div>
+            </div>
+            <button class="btn--primary mt-6 w-full" type="button">Kelola Lelang</button>
+          </div>
+        </article>
+
+        <article class="overflow-hidden rounded-[1.75rem] bg-white shadow-soft">
+          <img class="h-64 w-full object-cover" src="../../assets/images/8a4d9c06b4f444d3c1935573f7f1e3443127ffcd.png" alt="Topeng Barong Bali Antik" />
+          <div class="p-6">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700"><i class="h-2 w-2 rounded-full bg-emerald-500"></i>Live</span>
+                <h2 class="mt-4 text-2xl font-extrabold tracking-[-0.03em] text-cocoa-900">Topeng Barong Bali Antik</h2>
+              </div>
+              <span class="rounded-2xl bg-clay-50 px-4 py-2 text-sm font-extrabold text-clay-700">15 bid</span>
+            </div>
+            <div class="mt-6 grid grid-cols-3 gap-3">
+              <div class="rounded-2xl bg-sand-50 p-4"><p class="text-xs font-bold text-muted">Tawaran</p><strong class="mt-2 block text-lg text-clay-700">Rp 8.200.000</strong></div>
+              <div class="rounded-2xl bg-sand-50 p-4"><p class="text-xs font-bold text-muted">Sisa waktu</p><strong class="mt-2 block text-lg text-cocoa-900">12:42:09</strong></div>
+              <div class="rounded-2xl bg-sand-50 p-4"><p class="text-xs font-bold text-muted">Watcher</p><strong class="mt-2 block text-lg text-cocoa-900">98</strong></div>
+            </div>
+            <button class="btn--primary mt-6 w-full" type="button">Kelola Lelang</button>
+          </div>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <script src="../../assets/js/cart-store.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script src="../../assets/js/seller-dashboard.js"></script>
+</body>
+</html>

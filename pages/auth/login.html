@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Masuk Kreator — Karya Lokal</title>
+  <link rel="stylesheet" href="../../dist/output.css" />
+  <!-- session.js must load before auth.js so KL is available -->
+  <script src="../../assets/js/session.js"></script>
+  <script>
+    /* Redirect already-logged-in users away from login page */
+    (function () {
+      var s = window.KL && window.KL.getSession();
+      if (s) {
+        window.location.replace(s.role === 'seller' ? 'dashboard.html' : '../../index.html');
+      }
+    }());
+  </script>
+</head>
+<body class="min-h-screen bg-neutral-100 font-sans text-neutral-900 antialiased">
+
+  <main class="flex min-h-screen">
+    <section class="relative hidden min-h-screen flex-1 overflow-hidden bg-slate-900 lg:block" aria-label="Cerita kreator">
+      <img class="absolute inset-0 h-full w-full object-cover object-center" src="../../assets/images/df76563238df56947a3b7ac4b3423243b5643aed.png" alt="Tekstur karya tradisional Indonesia." />
+      <div class="absolute inset-0 bg-black/45"></div>
+      <div class="absolute inset-0 bg-slate-950/55 mix-blend-multiply"></div>
+
+      <div class="relative z-10 flex min-h-screen flex-col justify-between p-12">
+        <a class="inline-flex items-center gap-3 text-white" href="../../index.html" aria-label="Kembali ke beranda">
+          <img class="h-10 w-auto" src="../../assets/icons/logo-bag.svg" alt="" aria-hidden="true" />
+          <span class="text-3xl font-extrabold tracking-[-0.04em]">Karya Lokal</span>
+        </a>
+
+        <div class="max-w-[420px] pb-8 text-white">
+          <blockquote id="quoteText" class="text-[34px] font-medium leading-[1.55] tracking-[-0.02em] transition-opacity duration-500">
+            "Bersama Karya Lokal, kerajinan tangan saya menjangkau pecinta seni di seluruh nusantara."
+          </blockquote>
+          <p id="quoteCite" class="mt-8 text-lg leading-7 text-white/75 transition-opacity duration-500">— Siti Aminah, Pengrajin Tenun</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative flex min-h-screen flex-1 items-center justify-center overflow-hidden bg-stone-50 px-6 py-12 sm:px-10 lg:px-14">
+      <div class="pointer-events-none absolute -bottom-28 -right-20 h-72 w-72 rounded-[46%_54%_52%_48%/58%_46%_54%_42%] bg-orange-200/55"></div>
+
+      <div class="relative z-10 w-full max-w-[520px]">
+        <div class="mb-8">
+          <h1 class="text-5xl font-extrabold leading-[1.08] tracking-[-0.05em] text-neutral-900">
+            Selamat Datang,<br />
+            <span class="text-orange-600">Kreator.</span>
+          </h1>
+          <p class="mt-5 text-xl leading-8 text-stone-500">Kelola bisnis kerajinan lokal Anda dengan mudah.</p>
+        </div>
+
+        <div class="mb-8 flex justify-center">
+          <div class="flex h-48 w-48 items-center justify-center rounded-full bg-white shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
+            <img class="h-32 w-32 rounded-full object-cover" src="../../assets/images/0a786b17ad9c47ca2d8136bacb46d840c330f804.png" alt="Avatar kreator." />
+          </div>
+        </div>
+
+        <div class="mb-8 space-y-3" aria-label="Opsi login">
+          <button class="flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-[#005fd8] bg-[#1A77F2] px-4 text-base font-bold text-white shadow-sm transition hover:bg-[#166de0]" type="button">
+            <svg aria-label="Facebook logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+              <path fill="white" d="M8 12h5V8c0-6 4-7 11-6v5c-4 0-5 0-5 3v2h5l-1 6h-4v12h-6V18H8z"></path>
+            </svg>
+            Login with Facebook
+          </button>
+          <button class="flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-[#e5e5e5] bg-white px-4 text-base font-bold text-black shadow-sm transition hover:bg-stone-100" type="button">
+            <svg aria-label="Google logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <g>
+                <path d="m0 0H512V512H0" fill="#fff"></path>
+                <path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path>
+                <path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path>
+                <path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path>
+                <path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path>
+              </g>
+            </svg>
+            Login with Google
+          </button>
+          <button class="flex h-12 w-full items-center justify-center gap-3 rounded-xl border border-[#e5e5e5] bg-white px-4 text-base font-bold text-black shadow-sm transition hover:bg-stone-100" type="button" data-email-login>
+            <svg aria-label="Email icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="black">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </g>
+            </svg>
+            Login with Email
+          </button>
+        </div>
+
+        <div class="mb-6 flex items-center gap-4">
+          <span class="h-px flex-1 bg-stone-200"></span>
+          <span class="text-sm font-semibold text-stone-400">atau</span>
+          <span class="h-px flex-1 bg-stone-200"></span>
+        </div>
+
+        <form id="loginForm" class="space-y-6" action="#" method="POST" novalidate>
+          <label class="block space-y-3">
+            <span class="block text-base font-bold text-neutral-900">Email</span>
+            <input class="h-[58px] w-full rounded-2xl border border-stone-200 bg-white px-6 text-lg text-neutral-900 shadow-sm outline-none placeholder:text-stone-400 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10" type="email" name="email" autocomplete="email" placeholder="contoh@email.com" required />
+          </label>
+
+          <div class="space-y-3">
+            <div class="flex items-center justify-between gap-4">
+              <label class="text-base font-bold text-neutral-900" for="login-password">Kata Sandi</label>
+              <a class="text-base font-semibold text-orange-600 hover:text-orange-700" href="forgot-password.html">Lupa kata sandi?</a>
+            </div>
+            <div class="relative">
+              <input id="login-password" class="h-[58px] w-full rounded-2xl border border-stone-200 bg-white px-6 pr-14 text-lg text-neutral-900 shadow-sm outline-none placeholder:text-stone-400 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10" type="password" name="password" autocomplete="current-password" placeholder="Masukkan kata sandi" required />
+              <button type="button" id="togglePassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-stone-400 transition hover:text-orange-600" aria-label="Tampilkan kata sandi">
+                <!-- Eye open (shown when password is hidden) -->
+                <svg id="eyeOpen" class="h-5 w-5" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+                  <path d="M1 8C1 8 4.5 1 11 1s10 7 10 7-3.5 7-10 7S1 8 1 8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <circle cx="11" cy="8" r="3" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+                <!-- Eye closed (shown when password is visible) -->
+                <svg id="eyeClosed" class="hidden h-5 w-5" viewBox="0 0 22 20" fill="none" aria-hidden="true">
+                  <path d="M1 1l20 18M9.58 9.6A3 3 0 0 0 13.4 13M6.36 6.36C3.9 7.9 2 10 2 10s3.5 7 9 7a9.6 9.6 0 0 0 5.64-1.87M10 3.05A9.3 9.3 0 0 1 11 3c5.5 0 9 7 9 7a15 15 0 0 1-1.8 2.65" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Error message -->
+          <p id="loginError" class="hidden rounded-xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-600" role="alert" aria-live="polite"></p>
+
+          <button class="h-[58px] w-full rounded-2xl bg-orange-600 text-lg font-extrabold text-white shadow-[0_12px_26px_rgba(234,88,12,0.24)] transition hover:bg-orange-700 active:scale-[0.99]" type="submit">
+            Login
+          </button>
+        </form>
+
+        <p class="mt-10 text-center text-base text-stone-500">
+          Belum punya akun?
+          <a class="font-extrabold text-orange-600 hover:text-orange-700" href="register.html">Daftar sekarang</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const quotes = [
+      {
+        text: '"Bersama Karya Lokal, kerajinan tangan saya menjangkau pecinta seni di seluruh nusantara."',
+        cite: "— Siti Aminah, Pengrajin Tenun"
+      },
+      {
+        text: '"Setiap helai batik membawa cerita panjang tentang tangan, waktu, dan identitas Nusantara."',
+        cite: "— Raka Pradipta, Kolektor Batik"
+      },
+      {
+        text: '"Karya lokal bukan sekadar produk, ia adalah jembatan antara tradisi dan pasar modern."',
+        cite: "— Dewi Lestari, Kurator Kriya"
+      },
+      {
+        text: '"Lewat ruang digital ini, karya kecil dari desa bisa bertemu pelanggan dari seluruh Indonesia."',
+        cite: "— Agus Santoso, Pengrajin Kayu"
+      }
+    ];
+
+    const quoteText = document.getElementById("quoteText");
+    const quoteCite = document.getElementById("quoteCite");
+    let quoteIndex = 0;
+
+    setInterval(() => {
+      if (!quoteText || !quoteCite) return;
+      quoteText.style.opacity = "0";
+      quoteCite.style.opacity = "0";
+
+      setTimeout(() => {
+        quoteIndex = (quoteIndex + 1) % quotes.length;
+        quoteText.textContent = quotes[quoteIndex].text;
+        quoteCite.textContent = quotes[quoteIndex].cite;
+        quoteText.style.opacity = "1";
+        quoteCite.style.opacity = "1";
+      }, 500);
+    }, 6000);
+
+    document.querySelector("[data-email-login]")?.addEventListener("click", function () {
+      document.querySelector('input[name="email"]')?.focus();
+    });
+
+    /* ---- Password toggle ---- */
+    var toggleBtn = document.getElementById("togglePassword");
+    var pwInput   = document.getElementById("login-password");
+    var eyeOpen   = document.getElementById("eyeOpen");
+    var eyeClosed = document.getElementById("eyeClosed");
+
+    if (toggleBtn && pwInput) {
+      toggleBtn.addEventListener("click", function () {
+        var isHidden = pwInput.type === "password";
+        pwInput.type = isHidden ? "text" : "password";
+        eyeOpen.classList.toggle("hidden", isHidden);
+        eyeClosed.classList.toggle("hidden", !isHidden);
+        toggleBtn.setAttribute("aria-label", isHidden ? "Sembunyikan kata sandi" : "Tampilkan kata sandi");
+      });
+    }
+
+    /* ---- Login form — real auth ---- */
+    var loginForm = document.getElementById("loginForm");
+    if (loginForm) {
+      loginForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var email = loginForm.querySelector('[name="email"]').value;
+        var pw    = loginForm.querySelector('[name="password"]').value;
+        var errorEl = document.getElementById("loginError");
+
+        if (!window.KL) return;
+        var user = window.KL.login(email, pw);
+
+        if (!user) {
+          if (errorEl) {
+            errorEl.textContent = "Email atau kata sandi salah. Coba lagi.";
+            errorEl.classList.remove("hidden");
+            setTimeout(function () { errorEl.classList.add("hidden"); }, 4000);
+          }
+          return;
+        }
+
+        window.location.href = user.role === "seller" ? "../seller/dashboard.html" : "../../index.html";
+      });
+    }
+  </script>
+</body>
+</html>

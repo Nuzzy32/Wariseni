@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jasa Kreasi - Karya Lokal</title>
+  <link rel="stylesheet" href="../dist/output.css" />
+  <script src="../assets/js/session.js"></script>
+  <script>(function(){if(!window.KL||!window.KL.requireLogin())return;}());</script>
+</head>
+<body data-page="services" class="bg-[#f8f3ec]">
+
+
+  <main id="services-main" class="mx-auto max-w-[1280px] bg-white" data-services>
+    <div class="grid min-h-[1458px] lg:grid-cols-[320px_minmax(0,1fr)]">
+      <aside class="border-b border-gray-200 bg-[#f8f3ec] px-6 py-6 lg:border-b-0 lg:border-r lg:border-gray-200">
+        <div class="sticky top-[89px] space-y-8">
+          <div class="flex items-center justify-between">
+            <h2 class="inline-flex items-center gap-2 text-lg font-extrabold text-neutral-900">
+              <svg class="h-[18px] w-[18px] text-orange-600" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M8 18v-6h2v2h8v2h-8v2H8ZM0 16v-2h6v2H0Zm4-4v-2H0V8h4V6h2v6H4Zm4-2V8h10v2H8Zm4-4V0h2v2h4v2h-4v2h-2ZM0 4V2h10v2H0Z" fill="currentColor" />
+              </svg>
+              Filter Pencarian
+            </h2>
+            <button class="text-xs font-semibold text-stone-500 underline underline-offset-2 transition hover:text-orange-600" type="button">Reset</button>
+          </div>
+
+          <section class="space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="text-sm font-bold uppercase leading-5 tracking-[0.01em] text-[#896b61]">Gaya Ilustrasi</h3>
+              <svg class="h-2 w-2.5 text-gray-400" viewBox="0 0 7 5" fill="none" aria-hidden="true">
+                <path d="M.82 4.32 0 3.5 3.5 0 7 3.5l-.82.82L3.5 1.63.82 4.32Z" fill="currentColor" />
+              </svg>
+            </div>
+
+            <div class="space-y-2">
+              <label class="flex min-h-8 cursor-pointer items-center gap-3 text-sm font-semibold text-neutral-900">
+                <span class="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-lg bg-orange-600 text-white">
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M15.26 5.99c.49.49.49 1.28 0 1.77l-6.25 6.25a1.25 1.25 0 0 1-1.77 0l-2.5-2.5a1.25 1.25 0 0 1 1.77-1.77l1.62 1.62 5.36-5.37c.49-.49 1.28-.49 1.77 0Z" fill="currentColor" />
+                  </svg>
+                </span>
+                <span class="flex-1">Desain Motif Nusantara</span>
+                <span class="rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-400">124</span>
+              </label>
+              <label class="flex min-h-8 cursor-pointer items-center gap-3 text-sm font-medium text-neutral-900">
+                <span class="h-5 w-5 shrink-0 rounded-lg border border-gray-300 bg-white"></span>
+                <span class="flex-1">Realis Portrait</span>
+                <span class="rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-400">85</span>
+              </label>
+              <label class="flex min-h-8 cursor-pointer items-center gap-3 text-sm font-medium text-neutral-900">
+                <span class="h-5 w-5 shrink-0 rounded-lg border border-gray-300 bg-white"></span>
+                <span class="flex-1">Ilustrasi Karakter</span>
+                <span class="rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-400">203</span>
+              </label>
+              <label class="flex min-h-8 cursor-pointer items-center gap-3 text-sm font-medium text-neutral-900">
+                <span class="h-5 w-5 shrink-0 rounded-lg border border-gray-300 bg-white"></span>
+                <span class="flex-1">Lukisan</span>
+                <span class="rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-400">42</span>
+              </label>
+            </div>
+          </section>
+
+          <div class="h-px bg-gray-200"></div>
+
+          <section class="space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-sm font-bold uppercase leading-5 tracking-[0.01em] text-[#896b61]">Budget (IDR)</h3>
+              <svg class="h-2 w-2.5 text-gray-400" viewBox="0 0 7 5" fill="none" aria-hidden="true">
+                <path d="M.82 4.32 0 3.5 3.5 0 7 3.5l-.82.82L3.5 1.63.82 4.32Z" fill="currentColor" />
+              </svg>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <label class="relative flex-1">
+                <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400">Rp</span>
+                <input class="h-9 w-full rounded-xl border border-gray-200 bg-white pl-9 pr-2 text-sm text-neutral-900 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/15" value="100rb" aria-label="Budget minimum" />
+              </label>
+              <span class="text-sm text-gray-400">-</span>
+              <label class="relative flex-1">
+                <span class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-xs font-bold text-gray-400">Rp</span>
+                <input class="h-9 w-full rounded-xl border border-gray-200 bg-white pl-9 pr-2 text-sm text-neutral-900 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/15" value="5jt" aria-label="Budget maksimum" />
+              </label>
+            </div>
+
+            <div class="relative pt-4">
+              <div class="h-1.5 rounded-full bg-gray-200"></div>
+              <div class="absolute left-0 top-4 h-1.5 w-[74%] rounded-full bg-orange-600"></div>
+              <div class="absolute left-0 top-2.5 h-[18px] w-[18px] rounded-full border-2 border-orange-600 bg-white shadow-sm"></div>
+              <div class="absolute left-[71%] top-2.5 h-[18px] w-[18px] rounded-full border-2 border-orange-600 bg-white shadow-sm"></div>
+            </div>
+          </section>
+
+          <div class="h-px bg-gray-200"></div>
+        </div>
+      </aside>
+
+      <section class="bg-white px-6 py-8 sm:px-8 lg:px-10 lg:py-10">
+        <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h1 class="text-3xl font-extrabold leading-9 text-neutral-900">Jasa Kreasi</h1>
+            <p class="mt-2 text-base leading-6 text-[#896b61]">Temukan 1,200+ talenta lokal terbaik untuk proyek kreatifmu.</p>
+            <span class="sr-only" data-services-count>6 jasa aktif</span>
+          </div>
+
+          <label class="flex items-center gap-2">
+            <span class="text-sm font-medium text-stone-500">Urutkan:</span>
+            <span class="relative inline-flex h-9 w-40 items-center rounded-xl bg-stone-100 pl-3 pr-9 text-sm font-bold text-neutral-900">
+              Paling Relevan
+              <svg class="absolute right-2 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-500" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+                <path d="m6.3 8.4 4.2 4.2 4.2-4.2" stroke="currentColor" stroke-width="1.575" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+          </label>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-2">
+          <button class="service-chip active" type="button" data-service-chip="semua">Semua</button>
+          <button class="service-chip" type="button" data-service-chip="logo">Logo Design</button>
+          <button class="service-chip" type="button" data-service-chip="ilustrasi">Ilustrasi Buku</button>
+          <button class="service-chip" type="button" data-service-chip="sosial">Social Media</button>
+          <button class="service-chip" type="button" data-service-chip="uiux">UI/UX Design</button>
+        </div>
+
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          <a class="group flex min-h-[424px] flex-col overflow-hidden rounded-[24px] border border-gray-100 bg-white transition duration-200 hover:-translate-y-0.5 hover:border-orange-200 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500" href="provider-profile.html" data-service-card data-tag="ilustrasi" data-search="jasa ilustrasi wajah realis premium surya art studio">
+            <div class="min-h-[260px] flex-1 bg-white"></div>
+            <div class="p-4">
+              <h3 class="min-h-12 text-lg font-extrabold leading-6 text-neutral-900">Jasa Ilustrasi Wajah Realis Premium</h3>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-orange-50 text-[11px] font-bold text-orange-600">S</span>
+                <div>
+                  <p class="text-xs font-extrabold text-neutral-900">Surya Art Studio</p>
+                  <p class="inline-flex items-center gap-1 text-[10px] leading-4 text-gray-500">
+                    <svg class="h-3 w-3 text-yellow-500" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                      <path d="m2.23 11.08.95-4.1L0 4.23l4.2-.37L5.83 0l1.64 3.86 4.2.37-3.18 2.76.94 4.1-3.6-2.18-3.6 2.17Z" fill="currentColor" />
+                    </svg>
+                    <strong>5.0</strong> (42)
+                  </p>
+                </div>
+              </div>
+              <div class="mt-5 flex items-center justify-between">
+                <span class="text-xs font-bold uppercase text-[#896b61]">Mulai Dari</span>
+                <strong class="text-lg font-extrabold text-orange-600">Rp250rb</strong>
+              </div>
+            </div>
+          </a>
+
+          <a class="group flex min-h-[424px] flex-col overflow-hidden rounded-[24px] border border-gray-100 bg-white transition duration-200 hover:-translate-y-0.5 hover:border-orange-200 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500" href="provider-profile.html" data-service-card data-tag="logo" data-search="desain logo profesional branding umkm kreatif indo">
+            <div class="min-h-[260px] flex-1 bg-white"></div>
+            <div class="p-4">
+              <h3 class="min-h-12 text-lg font-extrabold leading-6 text-neutral-900">Desain Logo Profesional &amp; Branding UMKM</h3>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-orange-50 text-[11px] font-bold text-orange-600">K</span>
+                <div>
+                  <p class="text-xs font-extrabold text-neutral-900">Kreatif Indo</p>
+                  <p class="inline-flex items-center gap-1 text-[10px] leading-4 text-gray-500">
+                    <svg class="h-3 w-3 text-yellow-500" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.23 11.08.95-4.1L0 4.23l4.2-.37L5.83 0l1.64 3.86 4.2.37-3.18 2.76.94 4.1-3.6-2.18-3.6 2.17Z" fill="currentColor" /></svg>
+                    <strong>4.9</strong> (128)
+                  </p>
+                </div>
+              </div>
+              <div class="mt-5 flex items-center justify-between">
+                <span class="text-xs font-bold uppercase text-[#896b61]">Mulai Dari</span>
+                <strong class="text-lg font-extrabold text-orange-600">Rp500rb</strong>
+              </div>
+            </div>
+          </a>
+
+          <a class="group flex min-h-[424px] flex-col overflow-hidden rounded-[24px] border border-gray-100 bg-white transition duration-200 hover:-translate-y-0.5 hover:border-orange-200 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500" href="provider-profile.html" data-service-card data-tag="ilustrasi" data-search="anime style commission full body half neko draws">
+            <div class="min-h-[260px] flex-1 bg-white"></div>
+            <div class="p-4">
+              <h3 class="min-h-12 text-lg font-extrabold leading-6 text-neutral-900">Anime Style Commission Full Body/Half</h3>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-orange-50 text-[11px] font-bold text-orange-600">N</span>
+                <div>
+                  <p class="text-xs font-extrabold text-neutral-900">Neko Draws</p>
+                  <p class="inline-flex items-center gap-1 text-[10px] leading-4 text-gray-500">
+                    <svg class="h-3 w-3 text-yellow-500" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.23 11.08.95-4.1L0 4.23l4.2-.37L5.83 0l1.64 3.86 4.2.37-3.18 2.76.94 4.1-3.6-2.18-3.6 2.17Z" fill="currentColor" /></svg>
+                    <strong>4.8</strong> (56)
+                  </p>
+                </div>
+              </div>
+              <div class="mt-5 flex items-center justify-between">
+                <span class="text-xs font-bold uppercase text-[#896b61]">Mulai Dari</span>
+                <strong class="text-lg font-extrabold text-orange-600">Rp150rb</strong>
+              </div>
+            </div>
+          </a>
+
+          <a class="group flex min-h-[424px] flex-col overflow-hidden rounded-[24px] border border-gray-100 bg-white transition duration-200 hover:-translate-y-0.5 hover:border-orange-200 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500" href="provider-profile.html" data-service-card data-tag="sosial" data-search="digital watercolor undangan bunga studio social media">
+            <div class="min-h-[260px] flex-1 bg-white"></div>
+            <div class="p-4">
+              <h3 class="min-h-12 text-lg font-extrabold leading-6 text-neutral-900">Digital Watercolor untuk Undangan</h3>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-orange-50 text-[11px] font-bold text-orange-600">B</span>
+                <div>
+                  <p class="text-xs font-extrabold text-neutral-900">Bunga Studio</p>
+                  <p class="inline-flex items-center gap-1 text-[10px] leading-4 text-gray-500">
+                    <svg class="h-3 w-3 text-yellow-500" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.23 11.08.95-4.1L0 4.23l4.2-.37L5.83 0l1.64 3.86 4.2.37-3.18 2.76.94 4.1-3.6-2.18-3.6 2.17Z" fill="currentColor" /></svg>
+                    <strong>5.0</strong> (12)
+                  </p>
+                </div>
+              </div>
+              <div class="mt-5 flex items-center justify-between">
+                <span class="text-xs font-bold uppercase text-[#896b61]">Mulai Dari</span>
+                <strong class="text-lg font-extrabold text-orange-600">Rp300rb</strong>
+              </div>
+            </div>
+          </a>
+
+          <a class="group flex min-h-[424px] flex-col overflow-hidden rounded-[24px] border border-gray-100 bg-white transition duration-200 hover:-translate-y-0.5 hover:border-orange-200 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500" href="provider-profile.html" data-service-card data-tag="logo" data-search="desain kemasan packaging produk pack master">
+            <div class="min-h-[260px] flex-1 bg-white"></div>
+            <div class="p-4">
+              <h3 class="min-h-12 text-lg font-extrabold leading-6 text-neutral-900">Desain Kemasan &amp; Packaging Produk</h3>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-orange-50 text-[11px] font-bold text-orange-600">P</span>
+                <div>
+                  <p class="text-xs font-extrabold text-neutral-900">Pack Master</p>
+                  <p class="inline-flex items-center gap-1 text-[10px] leading-4 text-gray-500">
+                    <svg class="h-3 w-3 text-yellow-500" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.23 11.08.95-4.1L0 4.23l4.2-.37L5.83 0l1.64 3.86 4.2.37-3.18 2.76.94 4.1-3.6-2.18-3.6 2.17Z" fill="currentColor" /></svg>
+                    <strong>4.7</strong> (89)
+                  </p>
+                </div>
+              </div>
+              <div class="mt-5 flex items-center justify-between">
+                <span class="text-xs font-bold uppercase text-[#896b61]">Mulai Dari</span>
+                <strong class="text-lg font-extrabold text-orange-600">Rp750rb</strong>
+              </div>
+            </div>
+          </a>
+
+          <a class="group flex min-h-[424px] flex-col overflow-hidden rounded-[24px] border border-gray-100 bg-white transition duration-200 hover:-translate-y-0.5 hover:border-orange-200 hover:shadow-[0_16px_40px_rgba(15,23,42,0.08)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-orange-500" href="provider-profile.html" data-service-card data-tag="sosial" data-search="desain pattern batik modern digital batikku design">
+            <div class="min-h-[260px] flex-1 bg-white"></div>
+            <div class="p-4">
+              <h3 class="min-h-12 text-lg font-extrabold leading-6 text-neutral-900">Desain Pattern Batik Modern Digital</h3>
+              <div class="mt-4 flex items-center gap-2">
+                <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-orange-50 text-[11px] font-bold text-orange-600">B</span>
+                <div>
+                  <p class="text-xs font-extrabold text-neutral-900">Batikku Design</p>
+                  <p class="inline-flex items-center gap-1 text-[10px] leading-4 text-gray-500">
+                    <svg class="h-3 w-3 text-yellow-500" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2.23 11.08.95-4.1L0 4.23l4.2-.37L5.83 0l1.64 3.86 4.2.37-3.18 2.76.94 4.1-3.6-2.18-3.6 2.17Z" fill="currentColor" /></svg>
+                    <strong>4.9</strong> (34)
+                  </p>
+                </div>
+              </div>
+              <div class="mt-5 flex items-center justify-between">
+                <span class="text-xs font-bold uppercase text-[#896b61]">Mulai Dari</span>
+                <strong class="text-lg font-extrabold text-orange-600">Rp400rb</strong>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="mx-auto max-w-[1280px] border-t-4 border-orange-600 bg-[#21120d] px-8 py-16 text-white">
+    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+      <div>
+        <img class="h-12 w-12" src="../assets/icons/logo-bag.svg" alt="" aria-hidden="true" />
+        <p class="mt-6 text-sm text-slate-500">Customer Supports:</p>
+        <p class="mt-1 text-lg font-semibold">+62 81217424813</p>
+        <p class="mt-4 max-w-64 text-base leading-7 text-gray-400">Jl Airlangga No.4 - 6, Airlangga, Kec, Gubeng, Surabaya</p>
+        <p class="mt-4 text-base font-medium">info@kinbo.com</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-extrabold text-teal-600">Layanan</h3>
+        <ul class="mt-4 space-y-3 text-sm text-slate-400">
+          <li><a class="hover:text-white" href="marketplace.html">Cara Belanja</a></li>
+          <li><a class="hover:text-white" href="order-tracking.html">Pengiriman</a></li>
+          <li><a class="hover:text-white" href="cart.html">Metode Pembayaran</a></li>
+          <li><a class="hover:text-white" href="settings/settings-orders.html">Refund</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-extrabold text-teal-600">Tentang Kami</h3>
+        <ul class="mt-4 space-y-3 text-sm text-slate-400">
+          <li><a class="hover:text-white" href="../index.html#footer">Blog</a></li>
+          <li><a class="hover:text-white" href="../index.html#footer">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-extrabold text-teal-600">Langganan</h3>
+        <p class="mt-4 text-sm leading-6 text-slate-400">Daftarkan email Anda untuk mendapatkan update produk terbaru dan penawaran spesial.</p>
+        <form class="mt-5 flex gap-2" data-inline-form="newsletter">
+          <label class="sr-only" for="services-newsletter">Email Anda</label>
+          <input id="services-newsletter" class="h-9 min-w-0 flex-1 rounded-sm bg-white/10 px-3 text-sm text-white outline-none placeholder:text-slate-500 focus:ring-2 focus:ring-orange-600/50" type="email" placeholder="Email Anda" required />
+          <button class="h-9 rounded-sm bg-orange-600 px-4 text-sm font-extrabold text-white transition hover:bg-orange-700" type="submit">Kirim</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-14 flex flex-col gap-4 border-t border-white/10 pt-8 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-end sm:gap-8">
+      <a class="hover:text-white" href="#">Privacy Policy</a>
+      <a class="hover:text-white" href="#">Terms of Service</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/cart-store.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

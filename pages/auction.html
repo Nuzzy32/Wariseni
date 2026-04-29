@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lelang Eksklusif — Karya Lokal</title>
+  <link rel="stylesheet" href="../dist/output.css" />
+  <script src="../assets/js/session.js"></script>
+  <script>(function(){if(!window.KL||!window.KL.requireLogin())return;}());</script>
+</head>
+<body data-page="auction">
+  <main id="auction-main" class="pb-20 pt-8 sm:pt-10 lg:pt-14">
+    <section class="shell">
+      <div class="panel-glass px-6 py-8 sm:px-8 sm:py-10" data-reveal="1">
+        <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div class="max-w-3xl">
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-clay-700">Lelang Eksklusif</p>
+            <h1 class="mt-3 font-display text-5xl tracking-[-0.05em] text-cocoa-900 sm:text-6xl">Mahakarya langka, harga ditentukan oleh apresiasi.</h1>
+            <p class="mt-4 text-base leading-8 text-muted">Ikuti lelang item heritage berkualitas museum. Setiap lot dikurasi dan diverifikasi keasliannya oleh tim Karya Lokal.</p>
+          </div>
+          <div class="flex items-center gap-3 rounded-full border border-white/70 bg-white/90 px-5 py-3 shadow-soft">
+            <span class="relative flex h-3 w-3"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span><span class="relative inline-flex h-3 w-3 rounded-full bg-emerald-500"></span></span>
+            <span class="text-sm font-semibold text-cocoa-900" data-live-count>3 Lelang Aktif</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Auction Item -->
+      <article class="mt-8 panel-solid overflow-hidden" data-reveal style="--reveal-delay: 0.08s">
+        <div class="grid lg:grid-cols-2">
+          <div class="relative h-[360px] overflow-hidden lg:h-auto lg:min-h-[520px]">
+            <img loading="lazy" class="h-full w-full object-cover" src="../assets/images/df76563238df56947a3b7ac4b3423243b5643aed.png" alt="Batik Tulis Parang Barong kuno, koleksi langka dari Solo." />
+            <div class="absolute inset-0 bg-cocoa-900/35"></div>
+            <div class="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-clay-600 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-soft">
+              <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-white"></span></span>
+              Sedang Berlangsung
+            </div>
+          </div>
+          <div class="flex flex-col justify-between p-6 sm:p-8 lg:p-10">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.22em] text-muted">Lot #001 — Heritage Collection</p>
+              <h2 class="mt-3 font-display text-4xl tracking-[-0.04em] text-cocoa-900 sm:text-5xl">Batik Tulis Parang Barong</h2>
+              <p class="mt-4 text-sm leading-7 text-muted">Kain batik tulis asli Solo, motif Parang Barong berusia lebih dari 50 tahun. Pewarna alami dari akar mengkudu, dikerjakan selama 6 bulan oleh maestro batik Ibu Suharti. Sertifikat keaslian disertakan.</p>
+              <div class="mt-6 flex items-center gap-4">
+                <img class="h-12 w-12 rounded-full object-cover shadow-soft" src="../assets/images/0a786b17ad9c47ca2d8136bacb46d840c330f804.png" alt="Ibu Suharti" />
+                <div>
+                  <strong class="text-sm text-cocoa-900">Ibu Suharti</strong>
+                  <p class="text-xs text-muted">Maestro Batik, Solo</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <!-- Countdown Timer -->
+              <div class="rounded-2xl border border-cocoa-900/8 bg-sand-50/90 p-5">
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Sisa Waktu</p>
+                <div class="mt-3 flex gap-3" data-auction-timer="featured" data-end="2026-05-13T20:58:28+07:00">
+                  <div class="flex-1 rounded-xl bg-white px-3 py-3 text-center shadow-soft">
+                    <span class="countdown font-mono text-2xl font-semibold text-cocoa-900 sm:text-3xl">
+                      <span style="--value:0;" data-timer-days aria-live="polite" aria-label="0"></span>
+                    </span>
+                    <span class="mt-1 block text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">Hari</span>
+                  </div>
+                  <div class="flex-1 rounded-xl bg-white px-3 py-3 text-center shadow-soft">
+                    <span class="countdown font-mono text-2xl font-semibold text-cocoa-900 sm:text-3xl">
+                      <span style="--value:0;" data-timer-hours aria-live="polite" aria-label="0"></span>
+                    </span>
+                    <span class="mt-1 block text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">Jam</span>
+                  </div>
+                  <div class="flex-1 rounded-xl bg-white px-3 py-3 text-center shadow-soft">
+                    <span class="countdown font-mono text-2xl font-semibold text-cocoa-900 sm:text-3xl">
+                      <span style="--value:0;" data-timer-minutes aria-live="polite" aria-label="0"></span>
+                    </span>
+                    <span class="mt-1 block text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">Menit</span>
+                  </div>
+                  <div class="flex-1 rounded-xl bg-white px-3 py-3 text-center shadow-soft">
+                    <span class="countdown font-mono text-2xl font-semibold text-cocoa-900 sm:text-3xl">
+                      <span style="--value:0;" data-timer-seconds aria-live="polite" aria-label="0"></span>
+                    </span>
+                    <span class="mt-1 block text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">Detik</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Current Highest Bid -->
+              <div class="mt-4 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Tawaran Tertinggi</p>
+                  <strong class="mt-1 block text-3xl text-clay-600 sm:text-4xl" data-highest-bid="featured">Rp 12.500.000</strong>
+                  <p class="mt-1 text-xs text-muted">dari <span class="font-semibold text-cocoa-900">R***a P.</span> — 14 menit lalu</p>
+                </div>
+                <button class="btn--primary gap-2" type="button" data-bid-btn="featured">
+                  <span>Pasang Tawaran</span>
+                  <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 8h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path><path d="M8.75 3.25 13.25 8l-4.5 4.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bid History for Featured -->
+      <div class="mt-6 grid gap-6 lg:grid-cols-[1fr_0.42fr]" data-reveal style="--reveal-delay: 0.18s">
+        <article class="panel-solid overflow-hidden">
+          <div class="border-b border-cocoa-900/8 px-6 py-5">
+            <h3 class="text-xl font-semibold text-cocoa-900">Riwayat Tawaran</h3>
+            <p class="mt-1 text-sm text-muted">22 tawaran dari 9 bidder</p>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-left text-sm">
+              <thead class="bg-cocoa-900/[0.03] text-muted">
+                <tr>
+                  <th class="px-6 py-4 font-semibold">Bidder</th>
+                  <th class="px-6 py-4 font-semibold">Tawaran</th>
+                  <th class="px-6 py-4 font-semibold">Waktu</th>
+                </tr>
+              </thead>
+              <tbody data-bid-history="featured">
+                <tr class="border-t border-cocoa-900/8">
+                  <td class="px-6 py-4"><span class="inline-flex items-center gap-2"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-clay-50 text-xs font-semibold text-clay-700">RP</span><span class="font-medium text-cocoa-900">R***a P.</span></span></td>
+                  <td class="px-6 py-4 font-semibold text-clay-600">Rp 12.500.000</td>
+                  <td class="px-6 py-4 text-muted">14 menit lalu</td>
+                </tr>
+                <tr class="border-t border-cocoa-900/8">
+                  <td class="px-6 py-4"><span class="inline-flex items-center gap-2"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-sand-100 text-xs font-semibold text-cocoa-700">DA</span><span class="font-medium text-cocoa-900">D***i A.</span></span></td>
+                  <td class="px-6 py-4 font-semibold text-cocoa-900">Rp 12.000.000</td>
+                  <td class="px-6 py-4 text-muted">28 menit lalu</td>
+                </tr>
+                <tr class="border-t border-cocoa-900/8">
+                  <td class="px-6 py-4"><span class="inline-flex items-center gap-2"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-clay-50 text-xs font-semibold text-clay-700">RP</span><span class="font-medium text-cocoa-900">R***a P.</span></span></td>
+                  <td class="px-6 py-4 font-semibold text-cocoa-900">Rp 11.500.000</td>
+                  <td class="px-6 py-4 text-muted">45 menit lalu</td>
+                </tr>
+                <tr class="border-t border-cocoa-900/8">
+                  <td class="px-6 py-4"><span class="inline-flex items-center gap-2"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-sand-100 text-xs font-semibold text-cocoa-700">NR</span><span class="font-medium text-cocoa-900">N***a R.</span></span></td>
+                  <td class="px-6 py-4 font-semibold text-cocoa-900">Rp 10.800.000</td>
+                  <td class="px-6 py-4 text-muted">1 jam lalu</td>
+                </tr>
+                <tr class="border-t border-cocoa-900/8">
+                  <td class="px-6 py-4"><span class="inline-flex items-center gap-2"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-sand-100 text-xs font-semibold text-cocoa-700">DA</span><span class="font-medium text-cocoa-900">D***i A.</span></span></td>
+                  <td class="px-6 py-4 font-semibold text-cocoa-900">Rp 10.000.000</td>
+                  <td class="px-6 py-4 text-muted">2 jam lalu</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <aside class="space-y-6">
+          <section class="panel-glass p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted">Info Lot</p>
+            <dl class="mt-4 space-y-4 text-sm">
+              <div class="flex justify-between"><dt class="text-muted">Harga Awal</dt><dd class="font-semibold text-cocoa-900">Rp 5.000.000</dd></div>
+              <div class="flex justify-between"><dt class="text-muted">Kelipatan Bid</dt><dd class="font-semibold text-cocoa-900">Rp 500.000</dd></div>
+              <div class="flex justify-between"><dt class="text-muted">Estimasi Nilai</dt><dd class="font-semibold text-cocoa-900">Rp 15-20 jt</dd></div>
+              <div class="flex justify-between"><dt class="text-muted">Kondisi</dt><dd class="font-semibold text-cocoa-900">Sangat Baik</dd></div>
+              <div class="flex justify-between"><dt class="text-muted">Sertifikat</dt><dd class="font-semibold text-emerald-700">Terverifikasi</dd></div>
+            </dl>
+          </section>
+          <section class="panel-solid p-6">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-clay-700">Jaminan</p>
+            <h3 class="mt-3 text-lg font-semibold text-cocoa-900">Autentikasi Karya Lokal</h3>
+            <p class="mt-2 text-sm leading-7 text-muted">Setiap lot lelang melewati proses verifikasi oleh kurator berpengalaman. Sertifikat keaslian dan riwayat provenance disertakan.</p>
+          </section>
+        </aside>
+      </div>
+
+      <!-- Other Active Auctions -->
+      <h2 class="mt-12 font-display text-3xl tracking-[-0.04em] text-cocoa-900" data-reveal style="--reveal-delay: 0.22s">Lelang Lainnya</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3" data-reveal style="--reveal-delay: 0.26s">
+
+        <article class="panel-solid overflow-hidden cursor-pointer" data-auction-card>
+          <div class="relative h-64 overflow-hidden">
+            <img loading="lazy" class="h-full w-full object-cover" src="../assets/images/8a4d9c06b4f444d3c1935573f7f1e3443127ffcd.png" alt="Topeng Barong Bali berukir kayu pule." />
+            <div class="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-clay-600 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
+              <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-white"></span></span>
+              Live
+            </div>
+          </div>
+          <div class="px-5 py-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted">Lot #002</p>
+            <h3 class="mt-2 text-xl font-semibold text-cocoa-900">Topeng Barong Bali Antik</h3>
+            <p class="mt-2 text-sm leading-7 text-muted">Ukiran kayu pule berusia 40 tahun, detail pewarnaan alami.</p>
+            <div class="mt-4 flex gap-3" data-auction-timer="lot2" data-end="2026-05-13T20:59:03+07:00">
+              <div class="flex-1 rounded-lg bg-sand-50 py-2 text-center leading-none">
+                <span class="countdown font-mono text-sm font-semibold text-cocoa-900"><span style="--value:0;" data-timer-days aria-live="polite" aria-label="0"></span></span><span class="text-xs text-muted">h </span>
+                <span class="countdown font-mono text-sm font-semibold text-cocoa-900"><span style="--value:0;" data-timer-hours aria-live="polite" aria-label="0"></span></span><span class="text-xs text-muted">j </span>
+                <span class="countdown font-mono text-sm font-semibold text-cocoa-900"><span style="--value:0;" data-timer-minutes aria-live="polite" aria-label="0"></span></span><span class="text-xs text-muted">m </span>
+                <span class="countdown font-mono text-sm font-semibold text-cocoa-900"><span style="--value:0;" data-timer-seconds aria-live="polite" aria-label="0"></span></span><span class="text-xs text-muted">d</span>
+              </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">Tawaran Tertinggi</p>
+                <strong class="text-lg text-clay-600">Rp 8.200.000</strong>
+              </div>
+              <span class="rounded-full bg-sand-50 px-3 py-1 text-xs font-semibold text-muted">15 bid</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel-solid overflow-hidden cursor-pointer" data-auction-card>
+          <div class="relative h-64 overflow-hidden">
+            <img loading="lazy" class="h-full w-full object-cover" src="../assets/images/64baf6bfb50ffbe62b3dbb2617d1de675826e7cf.png" alt="Keris Jawa pusaka berusia ratusan tahun." />
+            <div class="absolute left-4 top-4 flex items-center gap-2 rounded-full bg-clay-600 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">
+              <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-white"></span></span>
+              Live
+            </div>
+          </div>
+          <div class="px-5 py-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted">Lot #003</p>
+            <h3 class="mt-2 text-xl font-semibold text-cocoa-900">Keris Pusaka Jawa Kuno</h3>
+            <p class="mt-2 text-sm leading-7 text-muted">Keris luk 7 dengan pamor Sanak, warangka kayu cendana ukir.</p>
+            <div class="mt-4 flex gap-3" data-auction-timer="lot3" data-end="2026-05-17T00:34:04+07:00">
+              <div class="flex-1 rounded-lg bg-sand-50 py-2 text-center leading-none">
+                <span class="countdown font-mono text-sm font-semibold text-cocoa-900"><span style="--value:0;" data-timer-days aria-live="polite" aria-label="0"></span></span><span class="text-xs text-muted">h </span>
+                <span class="countdown font-mono text-sm font-semibold text-cocoa-900"><span style="--value:0;" data-timer-hours aria-live="polite" aria-label="0"></span></span><span class="text-xs text-muted">j </span>
+                <span class="countdown font-mono text-sm font-semibold text-cocoa-900"><span style="--value:0;" data-timer-minutes aria-live="polite" aria-label="0"></span></span><span class="text-xs text-muted">m </span>
+                <span class="countdown font-mono text-sm font-semibold text-cocoa-900"><span style="--value:0;" data-timer-seconds aria-live="polite" aria-label="0"></span></span><span class="text-xs text-muted">d</span>
+              </div>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">Tawaran Tertinggi</p>
+                <strong class="text-lg text-clay-600">Rp 22.000.000</strong>
+              </div>
+              <span class="rounded-full bg-sand-50 px-3 py-1 text-xs font-semibold text-muted">31 bid</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel-solid overflow-hidden cursor-pointer" data-auction-card>
+          <div class="relative h-64 overflow-hidden">
+            <img loading="lazy" class="h-full w-full object-cover" src="../assets/images/269ae8e0d913d37f54a4f506a1c361c3221484e3.png" alt="Songket Palembang vintage benang emas asli." />
+            <div class="absolute left-4 top-4 rounded-full bg-cocoa-900 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white">Segera Dibuka</div>
+          </div>
+          <div class="px-5 py-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted">Lot #004</p>
+            <h3 class="mt-2 text-xl font-semibold text-cocoa-900">Songket Palembang Vintage</h3>
+            <p class="mt-2 text-sm leading-7 text-muted">Benang emas asli, motif Naga Besaung, koleksi keluarga bangsawan.</p>
+            <div class="mt-4 rounded-lg bg-sand-50 py-2 text-center">
+              <p class="text-xs font-semibold text-muted">Dibuka 7 April 2026, 10:00 WIB</p>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+              <div>
+                <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-muted">Harga Awal</p>
+                <strong class="text-lg text-cocoa-900">Rp 15.000.000</strong>
+              </div>
+              <span class="rounded-full bg-clay-50 px-3 py-1 text-xs font-semibold text-clay-700">Upcoming</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Bid Modal -->
+      <div class="fixed inset-0 z-50 hidden items-center justify-center bg-cocoa-900/50 backdrop-blur-sm" id="bidModal" data-bid-modal>
+        <div class="mx-4 w-full max-w-md rounded-[2rem] bg-white p-6 shadow-float sm:p-8" role="dialog" aria-modal="true" aria-labelledby="bidModalTitle">
+          <div class="flex items-start justify-between">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-clay-700">Pasang Tawaran</p>
+              <h3 id="bidModalTitle" class="mt-2 text-2xl font-semibold text-cocoa-900">Batik Tulis Parang Barong</h3>
+            </div>
+            <button class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cocoa-900/10 text-cocoa-900 transition hover:border-clay-300 hover:text-clay-700" type="button" data-bid-modal-close aria-label="Tutup">
+              <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.5 3.5 12.5 12.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path><path d="M12.5 3.5 3.5 12.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
+            </button>
+          </div>
+          <div class="mt-6 rounded-2xl bg-sand-50 p-4">
+            <div class="flex justify-between text-sm">
+              <span class="text-muted">Tawaran Tertinggi Saat Ini</span>
+              <strong class="text-clay-600">Rp 12.500.000</strong>
+            </div>
+            <div class="mt-2 flex justify-between text-sm">
+              <span class="text-muted">Minimum Tawaran Berikutnya</span>
+              <strong class="text-cocoa-900">Rp 13.000.000</strong>
+            </div>
+          </div>
+          <form class="mt-6" data-bid-form>
+            <label class="input-shell">
+              <span class="text-xs font-semibold uppercase tracking-[0.18em] text-muted">Tawaran Anda (Rp)</span>
+              <input class="field-input text-2xl font-semibold" type="number" min="13000000" step="500000" value="13000000" required data-bid-amount />
+            </label>
+            <button class="btn--primary mt-4 w-full" type="submit">Konfirmasi Tawaran</button>
+            <p class="mt-3 text-center text-xs text-muted">Dengan menawar, Anda menyetujui syarat &amp; ketentuan lelang.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/60 bg-white/70 py-12 backdrop-blur">
+    <div class="shell grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+      <div>
+        <a class="flex items-center gap-3 text-cocoa-900" href="../index.html">
+          <img class="h-7 w-7" src="../assets/icons/logo-bag.svg" alt="" aria-hidden="true" />
+          <span class="font-display text-3xl leading-none tracking-[-0.04em]">Karya Lokal</span>
+        </a>
+        <p class="mt-5 text-sm leading-8 text-muted">+62 812 1742 4813<br />Jl Airlangga No.4 - 6, Surabaya<br />info@kinbo.com</p>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-[0.22em] text-cocoa-900">Layanan</h3>
+        <ul class="mt-4 space-y-3 text-sm text-muted">
+          <li><a class="hover:text-clay-700" href="marketplace.html">Marketplace</a></li>
+          <li><a class="hover:text-clay-700" href="services.html">Jasa Kreasi</a></li>
+          <li><a class="hover:text-clay-700" href="auction.html">Lelang Eksklusif</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-[0.22em] text-cocoa-900">Tentang</h3>
+        <ul class="mt-4 space-y-3 text-sm text-muted">
+          <li><a class="hover:text-clay-700" href="../index.html">Beranda</a></li>
+          <li><a class="hover:text-clay-700" href="explore.html">Jelajahi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-sm font-semibold uppercase tracking-[0.22em] text-cocoa-900">Langganan</h3>
+        <p class="mt-4 text-sm leading-7 text-muted">Dapatkan notifikasi lot baru dan jadwal lelang eksklusif.</p>
+        <form class="mt-4 flex flex-col gap-3" data-inline-form="newsletter">
+          <input class="field-input rounded-full border border-cocoa-900/10 bg-white px-4 py-3 shadow-soft" type="email" placeholder="Email Anda" required />
+          <button class="btn--primary" type="submit">Kirim</button>
+        </form>
+      </div>
+    </div>
+    <div class="shell mt-10 flex flex-col gap-3 border-t border-cocoa-900/8 pt-6 text-sm text-muted sm:flex-row sm:justify-between">
+      <span>Privacy Policy</span>
+      <span>Terms of Service</span>
+    </div>
+  </footer>
+
+  <script src="../assets/js/cart-store.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/auction.js"></script>
+</body>
+</html>

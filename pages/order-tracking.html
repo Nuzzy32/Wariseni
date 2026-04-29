@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lacak Order - Karya Lokal</title>
+  <link rel="stylesheet" href="../dist/output.css" />
+  <script src="../assets/js/session.js"></script>
+  <script>(function(){if(!window.KL||!window.KL.requireLogin())return;}());</script>
+</head>
+<body data-page="tracking" data-font="manrope">
+  <main class="pb-20 pt-8 sm:pt-10 lg:pt-14">
+    <section class="shell">
+      <div class="mb-8 max-w-3xl" data-reveal>
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-clay-700">Lacak Order</p>
+        <h1 class="mt-3 font-display text-5xl tracking-[-0.05em] text-cocoa-900 sm:text-6xl">Pantau pesanan dari pembayaran sampai selesai.</h1>
+        <p class="mt-4 text-base leading-8 text-muted">Status dan nomor resi disimulasikan dari order checkout lokal.</p>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
+        <aside class="panel-solid p-6">
+          <label class="space-y-2">
+            <span class="text-sm font-semibold text-cocoa-900">Cari Order ID</span>
+            <input class="field-input rounded-3xl border border-cocoa-900/10 bg-white px-5 py-4 shadow-soft" data-order-search type="search" placeholder="Contoh: KL-123456" />
+          </label>
+          <div class="mt-5 space-y-3" data-order-list></div>
+        </aside>
+
+        <section class="panel-solid p-6 sm:p-8" data-order-detail>
+          <p class="text-sm font-semibold text-muted">Pilih order untuk melihat detail tracking.</p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/js/cart-store.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+  (function () {
+    'use strict';
+    var cart = window.KaryaCart;
+    var listEl = document.querySelector('[data-order-list]');
+    var detailEl = document.querySelector('[data-order-detail]');
+    var input = document.querySelector('[data-order-search]');
+    var params = new URLSearchParams(window.location.search);
+    var selectedId = params.get('order') || '';
+
+    function esc(value) {
+      return String(value || '').replace(/[&<>"']/g, function (char) {
+        return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char];
+      });
+    }
+
+    function statusIndex(status) {
+      return ['Menunggu Pembayaran', 'Diproses', 'Dikirim', 'Selesai'].indexOf(status || 'Menunggu Pembayaran');
+    }
+
+    function renderList() {
+      var query = input.value.trim().toLowerCase();
+      var orders = cart.getOrders().filter(function (order) {
+        return !query || order.id.toLowerCase().includes(query);
+      });
+      if (!selectedId && orders[0]) selectedId = orders[0].id;
+      listEl.innerHTML = orders.length ? orders.map(function (order) {
+        return '<button class="w-full rounded-2xl px-4 py-3 text-left transition ' + (order.id === selectedId ? 'bg-clay-50 text-clay-700' : 'bg-sand-50 text-muted hover:bg-clay-50') + '" type="button" data-order-id="' + esc(order.id) + '"><span class="block font-mono text-xs font-semibold">#' + esc(order.id) + '</span><span class="mt-1 block text-sm font-semibold">' + esc(order.status || 'Menunggu Pembayaran') + '</span></button>';
+      }).join('') : '<p class="rounded-2xl bg-sand-50 px-4 py-4 text-sm font-semibold text-muted">Belum ada order.</p>';
+      renderDetail();
+    }
+
+    function renderDetail() {
+      var order = cart.getOrders().find(function (item) { return item.id === selectedId; });
+      if (!order) {
+        detailEl.innerHTML = '<p class="text-sm font-semibold text-muted">Belum ada order yang bisa dilacak.</p>';
+        return;
+      }
+      var active = statusIndex(order.status);
+      var steps = ['Menunggu Pembayaran', 'Diproses', 'Dikirim', 'Selesai'];
+      detailEl.innerHTML =
+        '<div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">' +
+          '<div><p class="font-mono text-sm font-semibold text-muted">#' + esc(order.id) + '</p><h2 class="mt-2 text-3xl font-semibold text-cocoa-900">' + esc(order.status || 'Menunggu Pembayaran') + '</h2><p class="mt-2 text-sm text-muted">Resi: ' + esc(order.trackingNumber || '-') + '</p></div>' +
+          '<strong class="rounded-full bg-clay-50 px-4 py-2 text-sm text-clay-700">' + cart.formatRupiah(order.summary.total) + '</strong>' +
+        '</div>' +
+        '<div class="mt-8 grid gap-3 md:grid-cols-4">' + steps.map(function (step, index) {
+          return '<div class="rounded-2xl border ' + (index <= active ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : 'border-cocoa-900/8 bg-sand-50 text-muted') + ' px-4 py-4"><span class="text-xs font-semibold uppercase tracking-widest">' + (index <= active ? 'Aktif' : 'Menunggu') + '</span><p class="mt-2 text-sm font-bold">' + step + '</p></div>';
+        }).join('') + '</div>' +
+        '<div class="mt-8 space-y-3">' + order.items.map(function (item) {
+          return '<div class="flex items-center gap-3 rounded-2xl bg-sand-50 p-3"><img class="h-14 w-14 rounded-xl object-cover" src="../' + esc(item.image) + '" alt="' + esc(item.title) + '" /><div class="min-w-0 flex-1"><p class="font-semibold text-cocoa-900">' + esc(item.title) + '</p><p class="text-sm text-muted">Qty ' + item.quantity + ' - ' + esc(item.seller) + '</p></div></div>';
+        }).join('') + '</div>';
+    }
+
+    listEl.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-order-id]');
+      if (!button) return;
+      selectedId = button.dataset.orderId;
+      renderList();
+    });
+    input.addEventListener('input', renderList);
+    renderList();
+  }());
+  </script>
+</body>
+</html>

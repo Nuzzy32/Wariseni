@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketplace — Karya Lokal</title>
+  <link rel="stylesheet" href="../dist/output.css" />
+  <script src="../assets/js/session.js"></script>
+  <script>(function(){if(!window.KL||!window.KL.requireLogin())return;}());</script>
+</head>
+<body class="bg-stone-50 font-sans text-slate-900 antialiased" data-page="marketplace">
+
+  <!-- Main -->
+  <main id="marketplace-main" class="mx-auto max-w-[1280px] px-8 py-8" data-marketplace>
+
+    <!-- Page heading -->
+    <div class="mb-8" data-reveal>
+      <h1 class="text-3xl font-bold text-slate-900">Koleksi Nusantara</h1>
+      <p class="mt-1.5 text-base text-stone-500" data-results-count>Menampilkan 18 produk kerajinan tangan terbaik</p>
+    </div>
+
+    <div class="flex gap-8">
+
+      <!-- ===== Sidebar ===== -->
+      <aside class="hidden w-64 shrink-0 lg:block" aria-label="Filter produk" data-reveal style="--reveal-delay:0.06s">
+        <div class="space-y-6">
+
+          <!-- Kategori -->
+          <div class="rounded-xl border border-stone-100 bg-white p-5 shadow-sm">
+            <button class="flex w-full items-center justify-between text-sm font-bold uppercase tracking-wide text-slate-900" type="button" data-collapse-trigger="kategori" aria-expanded="true" aria-controls="filterKategori">
+              Kategori
+              <svg class="h-3 w-3 text-stone-400 transition-transform duration-200" viewBox="0 0 7 5" fill="none" aria-hidden="true" id="chevronKategori">
+                <path d="M0.817 4.317 0 3.5 3.5 0 7 3.5l-.817.817L3.5 1.633.817 4.317Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <div id="filterKategori" class="mt-4 space-y-2">
+              <label class="sidebar-option flex cursor-pointer items-center gap-3 rounded-md p-1 transition hover:bg-stone-50">
+                <input class="marketplace-option__input h-4 w-4 rounded border-stone-300 accent-orange-600" type="checkbox" data-filter-category value="fashion" />
+                <span class="flex-1 text-sm text-stone-600">Fashion &amp; Batik</span>
+                <span class="rounded-full bg-stone-100 px-1.5 py-0.5 text-xs text-stone-400">42</span>
+              </label>
+              <label class="sidebar-option flex cursor-pointer items-center gap-3 rounded-md p-1 transition hover:bg-stone-50">
+                <input class="marketplace-option__input h-4 w-4 rounded border-stone-300 accent-orange-600" type="checkbox" data-filter-category value="home-decor" />
+                <span class="flex-1 text-sm text-stone-600">Home Decor</span>
+                <span class="rounded-full bg-stone-100 px-1.5 py-0.5 text-xs text-stone-400">28</span>
+              </label>
+              <label class="sidebar-option flex cursor-pointer items-center gap-3 rounded-md p-1 transition hover:bg-stone-50">
+                <input class="marketplace-option__input h-4 w-4 rounded border-stone-300 accent-orange-600" type="checkbox" data-filter-category value="aksesoris" />
+                <span class="flex-1 text-sm text-stone-600">Aksesoris</span>
+                <span class="rounded-full bg-stone-100 px-1.5 py-0.5 text-xs text-stone-400">15</span>
+              </label>
+              <label class="sidebar-option flex cursor-pointer items-center gap-3 rounded-md p-1 transition hover:bg-stone-50">
+                <input class="marketplace-option__input h-4 w-4 rounded border-stone-300 accent-orange-600" type="checkbox" data-filter-category value="keramik" />
+                <span class="flex-1 text-sm text-stone-600">Keramik &amp; Tembikar</span>
+                <span class="rounded-full bg-stone-100 px-1.5 py-0.5 text-xs text-stone-400">39</span>
+              </label>
+              <label class="sidebar-option flex cursor-pointer items-center gap-3 rounded-md p-1 transition hover:bg-stone-50">
+                <input class="marketplace-option__input h-4 w-4 rounded border-stone-300 accent-orange-600" type="checkbox" data-filter-category value="perawatan" />
+                <span class="flex-1 text-sm text-stone-600">Perawatan</span>
+                <span class="rounded-full bg-stone-100 px-1.5 py-0.5 text-xs text-stone-400">12</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Harga -->
+          <div class="rounded-xl border border-stone-100 bg-white p-5 shadow-sm">
+            <button class="flex w-full items-center justify-between text-sm font-bold uppercase tracking-wide text-slate-900" type="button">
+              Harga
+              <svg class="h-3 w-3 text-stone-400" viewBox="0 0 7 5" fill="none" aria-hidden="true">
+                <path d="M0.817 4.317 0 3.5 3.5 0 7 3.5l-.817.817L3.5 1.633.817 4.317Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <div class="mt-4 space-y-4">
+              <div class="flex items-center justify-between text-xs font-medium text-stone-500">
+                <span>Rp 50rb</span>
+                <span>Rp 5jt+</span>
+              </div>
+              <!-- Slider visual (decorative, inputs below are functional) -->
+              <div class="relative h-1.5 rounded-full bg-stone-200">
+                <div class="absolute left-0 h-1.5 w-1/2 rounded-full bg-orange-600"></div>
+                <div class="absolute left-[calc(50%-8px)] top-[-5px] h-5 w-5 rounded-full border-2 border-orange-600 bg-white shadow-sm"></div>
+              </div>
+              <div class="flex gap-2">
+                <div class="relative flex-1">
+                  <span class="pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-xs text-stone-400">Rp</span>
+                  <input class="h-7 w-full rounded-md border border-stone-200 bg-white pl-7 text-xs text-slate-700 outline-none focus:border-orange-400" type="number" data-price-min placeholder="Min" min="0" />
+                </div>
+                <div class="relative flex-1">
+                  <span class="pointer-events-none absolute left-2 top-1/2 -translate-y-1/2 text-xs text-stone-400">Rp</span>
+                  <input class="h-7 w-full rounded-md border border-stone-200 bg-white pl-7 text-xs text-slate-700 outline-none focus:border-orange-400" type="number" data-price-max placeholder="Max" min="0" />
+                </div>
+              </div>
+              <button class="w-full rounded-md border border-orange-600/20 py-1.5 text-xs font-medium text-orange-600 transition hover:bg-orange-50" type="button" data-filter-apply>Terapkan</button>
+            </div>
+          </div>
+
+          <!-- Lokasi -->
+          <div class="rounded-xl border border-stone-100 bg-white p-5 shadow-sm">
+            <button class="flex w-full items-center justify-between text-sm font-bold uppercase tracking-wide text-slate-900" type="button">
+              Lokasi
+              <svg class="h-3 w-3 text-stone-400" viewBox="0 0 7 5" fill="none" aria-hidden="true">
+                <path d="M0.817 4.317 0 3.5 3.5 0 7 3.5l-.817.817L3.5 1.633.817 4.317Z" fill="currentColor"/>
+              </svg>
+            </button>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <button class="marketplace-tag rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-stone-600 transition hover:border-orange-300 hover:text-orange-600" type="button" data-filter-location value="bali">Bali</button>
+              <button class="marketplace-tag rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-stone-600 transition hover:border-orange-300 hover:text-orange-600" type="button" data-filter-location value="yogya">Yogya</button>
+              <button class="marketplace-tag rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-stone-600 transition hover:border-orange-300 hover:text-orange-600" type="button" data-filter-location value="solo">Solo</button>
+              <button class="marketplace-tag rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-stone-600 transition hover:border-orange-300 hover:text-orange-600" type="button" data-filter-location value="jepara">Jepara</button>
+              <button class="marketplace-tag rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-stone-600 transition hover:border-orange-300 hover:text-orange-600" type="button" data-filter-location value="lombok">Lombok</button>
+              <button class="marketplace-tag rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-stone-600 transition hover:border-orange-300 hover:text-orange-600" type="button" data-filter-location value="aceh">Aceh</button>
+              <button class="marketplace-tag rounded-full border border-stone-200 bg-white px-3 py-1 text-xs font-medium text-stone-600 transition hover:border-orange-300 hover:text-orange-600" type="button" data-filter-location value="palembang">Palembang</button>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+      <!-- ===== Product Area ===== -->
+      <div class="flex-1 min-w-0" data-reveal style="--reveal-delay:0.1s">
+
+        <!-- Filter chips + Sort bar -->
+        <div class="mb-6 flex items-center justify-between gap-4 rounded-lg border border-stone-100 bg-white p-3 shadow-sm">
+          <div class="flex flex-wrap items-center gap-2" id="activeChips">
+            <button class="rounded-md px-3 py-1.5 text-sm font-medium text-orange-600 transition hover:bg-orange-50" type="button" data-filter-reset>Reset Semua</button>
+          </div>
+          <div class="flex shrink-0 items-center gap-2">
+            <span class="text-sm text-stone-500">Urutkan:</span>
+            <div class="relative">
+              <select class="h-9 appearance-none rounded-md border border-stone-200 bg-stone-50 pl-3 pr-8 text-sm text-slate-800 outline-none focus:border-orange-400" data-sort>
+                <option value="default">Paling Relevan</option>
+                <option value="newest">Terbaru</option>
+                <option value="price-asc">Harga Terendah</option>
+                <option value="price-desc">Harga Tertinggi</option>
+              </select>
+              <svg class="pointer-events-none absolute right-2 top-1/2 h-4 w-4 -translate-y-1/2 text-stone-400" viewBox="0 0 21 21" fill="none" aria-hidden="true">
+                <path d="M6.3 8.4 10.5 12.6l4.2-4.2" stroke="currentColor" stroke-width="1.575" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3" aria-label="Daftar produk">
+
+          <!-- Card 1 -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="keramik" data-location="bali" data-price="150000" data-search="mug keramik handmade bali ubud pengrajin">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/marketplace/ceramic-mug.png" alt="Mug keramik handmade warna krem." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <span class="absolute left-3 top-3 rounded-sm bg-white/90 px-2 py-1 text-xs font-bold text-slate-800 shadow-sm backdrop-blur-sm">Terlaris</span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Keramik</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600">
+                  <svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>
+                  4.8
+                </span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Mug Keramik Hand-made Bali</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Dibuat oleh pengrajin Ubud dengan…</p>
+              <div class="mt-3">
+                <p class="text-lg font-bold text-orange-600">Rp 150.000</p>
+                <p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400">
+                  <svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>
+                  Bali
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="aksesoris" data-location="lombok" data-price="250000" data-search="tas rotan bulat premium lombok aksesoris anyaman">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/marketplace/rattan-bag.png" alt="Tas rotan bulat anyaman." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Aksesoris</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600">
+                  <svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>
+                  4.9
+                </span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Tas Rotan Bulat Premium</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Anyaman rapi, dilapisi kain batik di…</p>
+              <div class="mt-3">
+                <p class="text-lg font-bold text-orange-600">Rp 250.000</p>
+                <p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400">
+                  <svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>
+                  Lombok
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="fashion" data-location="solo" data-price="1200000" data-search="kain batik tulis solo parang fashion">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/marketplace/batik-cloth.png" alt="Kain batik tulis Solo." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Fashion</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600">
+                  <svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>
+                  5.0
+                </span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Kain Batik Tulis Solo</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Motif klasik Parang, pewarna alami…</p>
+              <div class="mt-3">
+                <p class="text-lg font-bold text-orange-600">Rp 1.200.000</p>
+                <p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400">
+                  <svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>
+                  Solo
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="home-decor" data-location="jepara" data-price="85000" data-search="mangkuk kayu jati ukir jepara home decor">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/marketplace/wooden-decor.png" alt="Dekor kayu jati minimalis." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Home Decor</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600">
+                  <svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>
+                  4.7
+                </span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Mangkuk Kayu Jati Ukir</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Food grade finishing, tahan lama dan…</p>
+              <div class="mt-3">
+                <p class="text-lg font-bold text-orange-600">Rp 85.000</p>
+                <p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400">
+                  <svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>
+                  Jepara
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="fashion" data-location="palembang" data-price="2500000" data-search="songket palembang gold fashion premium">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/marketplace/songket-fabric.png" alt="Songket Palembang." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Fashion</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600">
+                  <svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>
+                  4.9
+                </span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Songket Palembang Gold</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Benang emas asli, cocok untuk acara…</p>
+              <div class="mt-3">
+                <p class="text-lg font-bold text-orange-600">Rp 2.500.000</p>
+                <p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400">
+                  <svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>
+                  Palembang
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="perawatan" data-location="aceh" data-price="35000" data-search="sabun organik kopi aceh perawatan alami">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/marketplace/natural-soap.png" alt="Sabun organik kopi." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <span class="absolute left-3 top-3 rounded-sm bg-orange-600 px-2 py-1 text-xs font-bold text-white shadow-sm">Baru</span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Perawatan</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600">
+                  <svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>
+                  4.6
+                </span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Sabun Organik Kopi</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Scrub alami dari biji kopi arabika Gayo.</p>
+              <div class="mt-3">
+                <p class="text-lg font-bold text-orange-600">Rp 35.000</p>
+                <p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400">
+                  <svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>
+                  Aceh
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 7 -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="keramik" data-location="yogya" data-price="95000" data-search="gerabah kasongan yogyakarta keramik tanah liat">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/b175be3288918b1740487725749bb77976010078.png" alt="Gerabah Kasongan." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Keramik</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600">
+                  <svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>
+                  4.7
+                </span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Gerabah Kasongan Yogyakarta</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Tanah liat pilihan dibakar tradisional.</p>
+              <div class="mt-3">
+                <p class="text-lg font-bold text-orange-600">Rp 95.000</p>
+                <p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400">
+                  <svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>
+                  Yogya
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 8 -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="aksesoris" data-location="yogya" data-price="750000" data-search="wayang kulit purwa yogyakarta aksesoris kesenian">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/dfddcca739dac8c74aa01423424a9277624961b5.png" alt="Wayang kulit Purwa." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <span class="absolute left-3 top-3 rounded-sm bg-white/90 px-2 py-1 text-xs font-bold text-slate-800 shadow-sm backdrop-blur-sm">Eksklusif</span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Aksesoris</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600">
+                  <svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>
+                  5.0
+                </span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Wayang Kulit Purwa</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Ukiran detail tangan dalang senior Yogya.</p>
+              <div class="mt-3">
+                <p class="text-lg font-bold text-orange-600">Rp 750.000</p>
+                <p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400">
+                  <svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>
+                  Yogya
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 9 -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="aksesoris" data-location="bali" data-price="65000" data-search="topi anyam pandan bali aksesoris pantai">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/269ae8e0d913d37f54a4f506a1c361c3221484e3.png" alt="Topi anyam pandan Bali." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Aksesoris</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600">
+                  <svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>
+                  4.5
+                </span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Topi Anyam Pandan Bali</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Anyaman daun pandan kering, ringan.</p>
+              <div class="mt-3">
+                <p class="text-lg font-bold text-orange-600">Rp 65.000</p>
+                <p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400">
+                  <svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>
+                  Bali
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 10 -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="home-decor" data-location="bali" data-price="120000" data-search="set bambu makan bali home decor peralatan dapur">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/0a71935945cc4cb3d3b65c8f3e5de9ba14f37a59.png" alt="Set peralatan makan bambu." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Home Decor</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600">
+                  <svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>
+                  4.8
+                </span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Set Peralatan Makan Bambu</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Ramah lingkungan, ringan dan tahan lama.</p>
+              <div class="mt-3">
+                <p class="text-lg font-bold text-orange-600">Rp 120.000</p>
+                <p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400">
+                  <svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>
+                  Bali
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 11 -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="fashion" data-location="solo" data-price="350000" data-search="sarung tenun lurik solo fashion tradisional">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/4e220a2511b3c2934147afea453ec2912b42f9e7.png" alt="Sarung tenun lurik Solo." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Fashion</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600">
+                  <svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>
+                  4.8
+                </span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Sarung Tenun Lurik Solo</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Tenun tangan motif lurik khas Solo.</p>
+              <div class="mt-3">
+                <p class="text-lg font-bold text-orange-600">Rp 350.000</p>
+                <p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400">
+                  <svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>
+                  Solo
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 12 -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="home-decor" data-location="solo" data-price="180000" data-search="hiasan dinding kulit wayang solo home decor">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/e994f7ce98979bfe05ee3151dbaeb37f3e2d8c99.png" alt="Hiasan dinding kulit ukir." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <span class="absolute left-3 top-3 rounded-sm bg-orange-600 px-2 py-1 text-xs font-bold text-white shadow-sm">Baru</span>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Home Decor</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600">
+                  <svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>
+                  4.6
+                </span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Hiasan Dinding Kulit Ukir</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Motif batik mega mendung diukir halus.</p>
+              <div class="mt-3">
+                <p class="text-lg font-bold text-orange-600">Rp 180.000</p>
+                <p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400">
+                  <svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>
+                  Solo
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 13–18 hidden cards (same pattern, needed for filter/pagination JS) -->
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="keramik" data-location="yogya" data-price="200000" data-search="tembikar dekoratif yogyakarta keramik kasongan glazur">
+            <div class="relative overflow-hidden bg-stone-100">
+              <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/b175be3288918b1740487725749bb77976010078.png" alt="Tembikar dekoratif glazur." />
+              <div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-start justify-between">
+                <span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Keramik</span>
+                <span class="flex items-center gap-1 text-xs font-medium text-stone-600"><svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>4.7</span>
+              </div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Tembikar Dekoratif Glazur</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Finishing glazur celadon, cocok sebagai vas bunga.</p>
+              <div class="mt-3"><p class="text-lg font-bold text-orange-600">Rp 200.000</p><p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400"><svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>Yogya</p></div>
+            </div>
+          </article>
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="aksesoris" data-location="solo" data-price="175000" data-search="tas kanvas batik solo aksesoris fashion lokal">
+            <div class="relative overflow-hidden bg-stone-100"><img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/9b4a56fce54be094169859886f23fb807948e612.png" alt="Tas kanvas motif batik Solo." /><div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div></div>
+            <div class="p-4">
+              <div class="flex items-start justify-between"><span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Aksesoris</span><span class="flex items-center gap-1 text-xs font-medium text-stone-600"><svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>4.8</span></div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Tas Kanvas Motif Batik</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Kanvas tebal bermotif parang, cocok daily use.</p>
+              <div class="mt-3"><p class="text-lg font-bold text-orange-600">Rp 175.000</p><p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400"><svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>Solo</p></div>
+            </div>
+          </article>
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="perawatan" data-location="bali" data-price="85000" data-search="minyak esensial melati bali perawatan aromaterapi">
+            <div class="relative overflow-hidden bg-stone-100"><img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/2db159e91dfe7ca806ae7ad767ea0142e75bd374.png" alt="Minyak esensial melati Bali." /><div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div></div>
+            <div class="p-4">
+              <div class="flex items-start justify-between"><span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Perawatan</span><span class="flex items-center gap-1 text-xs font-medium text-stone-600"><svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>4.9</span></div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Minyak Esensial Melati Bali</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Aroma bunga melati menenangkan, ritual santai.</p>
+              <div class="mt-3"><p class="text-lg font-bold text-orange-600">Rp 85.000</p><p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400"><svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>Bali</p></div>
+            </div>
+          </article>
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="home-decor" data-location="jepara" data-price="450000" data-search="ukiran topeng kayu jepara home decor seni">
+            <div class="relative overflow-hidden bg-stone-100"><img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/6e23bb4dcba88f8a1e85aa28787abd9e63c93907.png" alt="Topeng kayu ukiran Jepara." /><div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div><span class="absolute left-3 top-3 rounded-sm bg-white/90 px-2 py-1 text-xs font-bold text-slate-800 shadow-sm backdrop-blur-sm">Terlaris</span></div>
+            <div class="p-4">
+              <div class="flex items-start justify-between"><span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Home Decor</span><span class="flex items-center gap-1 text-xs font-medium text-stone-600"><svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>4.9</span></div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Topeng Kayu Ukiran Jepara</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Ukiran tangan pengrajin senior Jepara.</p>
+              <div class="mt-3"><p class="text-lg font-bold text-orange-600">Rp 450.000</p><p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400"><svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>Jepara</p></div>
+            </div>
+          </article>
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="fashion" data-location="bali" data-price="850000" data-search="kain tenun ikat bali fashion endek tradisional">
+            <div class="relative overflow-hidden bg-stone-100"><img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/8a4d9c06b4f444d3c1935573f7f1e3443127ffcd.png" alt="Kain tenun ikat Endek Bali." /><div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div></div>
+            <div class="p-4">
+              <div class="flex items-start justify-between"><span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Fashion</span><span class="flex items-center gap-1 text-xs font-medium text-stone-600"><svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>4.8</span></div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Kain Tenun Ikat Endek Bali</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Tenun ikat tradisional Bali, warna kaya.</p>
+              <div class="mt-3"><p class="text-lg font-bold text-orange-600">Rp 850.000</p><p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400"><svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>Bali</p></div>
+            </div>
+          </article>
+          <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="fashion" data-location="yogya" data-price="475000" data-search="kebaya encim yogyakarta fashion batik modern">
+            <div class="relative overflow-hidden bg-stone-100"><img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/45c1b9ce24d767168e8a6917143a8d3ff8224b2f.png" alt="Kebaya encim batik modern Yogyakarta." /><div class="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div><span class="absolute left-3 top-3 rounded-sm bg-orange-600 px-2 py-1 text-xs font-bold text-white shadow-sm">Baru</span></div>
+            <div class="p-4">
+              <div class="flex items-start justify-between"><span class="text-xs font-semibold uppercase tracking-tight text-orange-600">Fashion</span><span class="flex items-center gap-1 text-xs font-medium text-stone-600"><svg class="h-3.5 w-3.5 text-yellow-400" viewBox="0 0 14 13" fill="currentColor" aria-hidden="true"><path d="M4.567 9.883 6.667 8.617l2.1 1.283-.5-2.4L10.067 5.9 7.633 5.683 6.667 3.417 5.7 5.667l-2.433.217 1.85 1.617-.55 2.382ZM2.55 12.667 3.633 7.983 0 4.833l4.8-.416L6.667 0l1.866 4.417 4.8.416-3.633 3.15L10.783 12.667l-4.116-2.484L2.55 12.667Z"/></svg>4.7</span></div>
+              <h3 class="mt-1 text-base font-bold text-slate-900">Kebaya Encim Batik Modern</h3>
+              <p class="mt-1.5 line-clamp-1 text-sm text-stone-500">Siluet kebaya kontemporer, ringan harian.</p>
+              <div class="mt-3"><p class="text-lg font-bold text-orange-600">Rp 475.000</p><p class="mt-0.5 flex items-center gap-1 text-xs text-stone-400"><svg class="h-3 w-3" viewBox="0 0 14 12" fill="currentColor" aria-hidden="true"><path d="M4.667 5.833a1.167 1.167 0 1 0 0-2.333 1.167 1.167 0 0 0 0 2.333Zm0 4.288C5.853 9.032 6.733 8.043 7.306 7.153c.574-.89.861-1.68.861-2.37 0-1.06-.338-1.927-1.013-2.603C6.478 1.504 5.649 1.167 4.667 1.167c-.982 0-1.811.337-2.487 1.013C1.505 2.856 1.167 3.723 1.167 4.783c0 .69.287 1.48.86 2.37C2.6 8.043 3.48 9.032 4.667 10.12Zm0 1.547C3.101 10.334 1.932 9.098 1.16 7.955.386 6.813 0 5.756 0 4.783c0-1.458.469-2.619 1.407-3.484C2.346.434 3.432 0 4.667 0c1.234 0 2.32.434 3.26 1.299.937.865 1.406 2.026 1.406 3.484 0 .973-.386 2.03-1.16 3.172-.772 1.143-1.94 2.38-3.506 3.71Z"/></svg>Yogya</p></div>
+            </div>
+          </article>
+
+        </div><!-- /grid -->
+
+        <!-- Pagination -->
+        <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
+          <div class="flex items-center gap-1.5" data-pagination>
+            <button class="marketplace-pagination__nav flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 transition hover:border-orange-300 hover:text-orange-600 disabled:opacity-40" type="button" data-page-prev aria-label="Halaman sebelumnya">
+              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none"><path d="M12.5 4 6.5 10l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="marketplace-pagination__nav flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 transition hover:border-orange-300 hover:text-orange-600 disabled:opacity-40" type="button" data-page-next aria-label="Halaman berikutnya">
+              <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none"><path d="m7.5 4 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <span class="text-sm text-stone-500" data-results-total>18 produk tersedia</span>
+        </div>
+        <p class="mt-3 text-center text-sm font-medium text-orange-600 hover:text-orange-700 cursor-pointer">Lihat Semua Produk (124)</p>
+
+      </div><!-- /product area -->
+    </div><!-- /flex -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 border-t border-stone-200 bg-stone-900 text-white">
+    <div class="h-1 bg-clay-600"></div>
+    <div class="mx-auto max-w-[1280px] grid gap-12 px-8 pb-8 pt-16 md:grid-cols-[320px_1fr_1fr_1fr]">
+      <div>
+        <img class="h-12 w-12" src="../assets/icons/logo-bag.svg" alt="" aria-hidden="true" />
+        <div class="mt-6 space-y-3 text-sm">
+          <p class="text-stone-400">Customer Supports:</p>
+          <p class="text-lg font-medium">+62 81217424813</p>
+          <p class="max-w-60 text-stone-400">Jl Airlangga No.4 - 6, Airlangga, Kec. Gubeng, Surabaya</p>
+          <p class="font-medium">info@kinbo.com</p>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold text-teal-400">Layanan</h3>
+        <ul class="mt-4 space-y-2 text-sm text-stone-400">
+          <li><a class="hover:text-white" href="marketplace.html">Cara Belanja</a></li>
+          <li><a class="hover:text-white" href="explore.html">Pengiriman</a></li>
+          <li><a class="hover:text-white" href="settings/settings-payment.html">Metode Pembayaran</a></li>
+          <li><a class="hover:text-white" href="auth/forgot-password.html">Refund</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold text-teal-400">Tentang Kami</h3>
+        <ul class="mt-4 space-y-2 text-sm text-stone-400">
+          <li><a class="hover:text-white" href="../index.html">Blog</a></li>
+          <li><a class="hover:text-white" href="auth/login.html">Kontak</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-bold text-teal-400">Langganan</h3>
+        <p class="mt-4 text-sm text-stone-400">Dapatkan update produk terbaru dan penawaran spesial.</p>
+        <form class="mt-4 flex gap-2">
+          <input class="min-w-0 flex-1 rounded-sm bg-white/10 px-3 py-2 text-sm text-white outline-none placeholder:text-stone-500 focus:ring-2 focus:ring-orange-600/40" type="email" placeholder="Email Anda" />
+          <button class="rounded-sm bg-orange-600 px-4 py-2 text-sm font-bold hover:bg-orange-700" type="submit">Kirim</button>
+        </form>
+      </div>
+    </div>
+    <div class="mx-auto max-w-[1280px] flex justify-end gap-6 border-t border-white/10 px-8 py-6 text-xs text-stone-500">
+      <a class="hover:text-white" href="#">Privacy Policy</a>
+      <a class="hover:text-white" href="#">Terms of Service</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/cart-store.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    /* Location tag active style */
+    document.querySelectorAll('[data-filter-location]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('[data-filter-location]').forEach(function (b) {
+          b.classList.remove('bg-orange-600', 'text-white', 'border-orange-600');
+          b.classList.add('border-stone-200', 'text-stone-600');
+        });
+        if (btn.classList.contains('active')) {
+          btn.classList.remove('active');
+        } else {
+          btn.classList.add('active', 'bg-orange-600', 'text-white', 'border-orange-600');
+          btn.classList.remove('border-stone-200', 'text-stone-600');
+        }
+      });
+    });
+
+    /* Category checkbox active style */
+    document.querySelectorAll('[data-filter-category]').forEach(function (input) {
+      input.addEventListener('change', function () {
+        var label = input.closest('label');
+        if (label) label.classList.toggle('bg-orange-50', input.checked);
+        var text = label && label.querySelector('span:not(:first-of-type)');
+        if (text) text.classList.toggle('font-semibold', input.checked);
+        var badge = label && label.querySelector('span:last-child');
+        if (badge) { badge.classList.toggle('bg-orange-100', input.checked); badge.classList.toggle('text-orange-600', input.checked); badge.classList.toggle('bg-stone-100', !input.checked); badge.classList.toggle('text-stone-400', !input.checked); }
+      });
+    });
+
+    /* Pagination page number style override */
+    (function () {
+      var style = document.createElement('style');
+      style.textContent = '.marketplace-pagination__page{display:inline-flex;height:2.25rem;width:2.25rem;align-items:center;justify-content:center;border-radius:9999px;border:1px solid #e7e5e4;background:white;font-size:.875rem;color:#44403c;cursor:pointer;transition:all .15s}.marketplace-pagination__page:hover{border-color:#f97316;color:#ea580c}.marketplace-pagination__page.is-current{background:#ea580c;color:white;border-color:#ea580c}.marketplace-pagination__ellipsis{display:inline-flex;height:2.25rem;width:2.25rem;align-items:center;justify-content:center;font-size:.875rem;color:#a8a29e}.marketplace-card.is-hidden{display:none}';
+      document.head.appendChild(style);
+    }());
+  </script>
+</body>
+</html>
