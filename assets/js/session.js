@@ -1,9 +1,3 @@
-/* ============================================================
-   Karya Lokal — Session Manager
-   Dummy accounts:
-     customer@gmail.com  / customer123  → role: customer
-     seller@gmail.com    / seller123    → role: seller
-   ============================================================ */
 (function (global) {
   'use strict';
 

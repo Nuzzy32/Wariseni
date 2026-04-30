@@ -1,15 +1,7 @@
-/* ===========================
-   Karya Lokal — Main App
-   Gate-Open Transition · Frangipani Particles
-   Staggered Reveal · Auth Panel Swap
-   =========================== */
-
 (function () {
   'use strict';
 
-  /* -------------------------------------------------------
-     Quotes & Background Images
-     ------------------------------------------------------- */
+  
   var quotes = [
     { text: '"Setiap goresan tangan adalah cerita yang abadi dari Nusantara."',                         cite: '— Pepatah Nusantara' },
     { text: '"Bersama Karya Lokal, kerajinan tangan saya menjangkau pecinta seni di seluruh nusantara."', cite: '— Siti Aminah, Pengrajin Tenun' },
@@ -38,9 +30,7 @@
     'assets/images/9b4a56fce54be094169859886f23fb807948e612.png'
   ];
 
-  /* -------------------------------------------------------
-     Timings
-     ------------------------------------------------------- */
+  
   var QUOTE_INTERVAL = 6000;
   var IMAGE_INTERVAL = 8000;
   var FADE_MS        = 500;
@@ -48,9 +38,7 @@
   var GATE_MS        = 1200;    // gate-open duration (matches CSS)
   var PARTICLE_COUNT = 35;
 
-  /* -------------------------------------------------------
-     DOM
-     ------------------------------------------------------- */
+  
   var overlay         = document.getElementById('authOverlay');
   var container       = document.getElementById('authContainer');
   var imagePanel      = document.querySelector('.image-panel');
@@ -70,9 +58,7 @@
   var gateOpened      = false;
   var quoteTimer, imageTimer;
 
-  /* =======================================================
-     1.  BACKGROUND IMAGE CROSSFADE
-     ======================================================= */
+  
   imagePanel.style.backgroundImage = 'none';
 
   var layerA = document.createElement('div');
@@ -105,9 +91,7 @@
     img.src = bgImages[(currentImgIdx + 1) % bgImages.length];
   }
 
-  /* =======================================================
-     2.  QUOTE ROTATION
-     ======================================================= */
+  
   function setQuote(i) {
     if (quoteText) quoteText.textContent = quotes[i].text;
     if (quoteCite) quoteCite.textContent = quotes[i].cite;
@@ -130,9 +114,7 @@
   quoteTimer = setInterval(rotateQuote, QUOTE_INTERVAL);
   imageTimer = setInterval(rotateImage, IMAGE_INTERVAL);
 
-  /* =======================================================
-     3.  LOGIN ↔ REGISTER PANEL SWAP
-     ======================================================= */
+  
   function showLogin() {
     if (isAnimating || !container.classList.contains('register-mode')) return;
     isAnimating = true;
@@ -170,9 +152,9 @@
     registerContent.classList.add('is-active');
   }
 
-  /* =======================================================
+  /* 
      4.  BUNGA JEPUN (FRANGIPANI) PARTICLES
-     ======================================================= */
+      */
   var petalSVG =
     '<svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">' +
       '<g opacity="0.85">' +
@@ -219,9 +201,7 @@
     }
   }
 
-  /* =======================================================
-     5.  SCROLL REVEAL (IntersectionObserver)
-     ======================================================= */
+  
   function initScrollReveal() {
     if (!landing) return;
     var revealEls = landing.querySelectorAll('[data-reveal]');
@@ -248,9 +228,8 @@
     }
   }
 
-  /* =======================================================
-     6.  GATE-OPEN TRANSITION
-     ======================================================= */
+  /* 
+     6.  GATE-OPEN TRANSITION */
   function openGate() {
     if (gateOpened) return;
     gateOpened = true;
@@ -280,9 +259,7 @@
     }, GATE_MS);
   }
 
-  /* =======================================================
-     7.  FORM SUBMIT HANDLERS
-     ======================================================= */
+  
   var loginForm = document.getElementById('loginForm');
   if (loginForm) {
     loginForm.addEventListener('submit', function (e) {
@@ -305,9 +282,9 @@
     });
   }
 
-  /* =======================================================
+  /* 
      8.  PASSWORD VISIBILITY TOGGLE
-     ======================================================= */
+  */
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('.toggle-password');
     if (!btn) return;

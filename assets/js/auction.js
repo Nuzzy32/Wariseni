@@ -1,9 +1,7 @@
 (function () {
   'use strict';
 
-  /* -------------------------------------------------------
-     1. Countdown Timers
-     ------------------------------------------------------- */
+  
   var timers = document.querySelectorAll('[data-auction-timer]');
   if (!timers.length) return;
 
@@ -51,9 +49,7 @@
     timers.forEach(function (el) { updateTimer(el); });
   }, 1000);
 
-  /* -------------------------------------------------------
-     2. Bid Modal
-     ------------------------------------------------------- */
+  
   var modal      = document.getElementById('bidModal');
   var bidBtns    = document.querySelectorAll('[data-bid-btn]');
   var closeBtn   = modal ? modal.querySelector('[data-bid-modal-close]') : null;

@@ -1,8 +1,3 @@
-/* ===========================
-   Auth Page — Karya Lokal
-   Sliding Panel Swap + Rotating Quotes & Images
-   =========================== */
-
 (function () {
   'use strict';
 
@@ -10,9 +5,7 @@
   if (staleHeader) staleHeader.remove();
   if (document.body) document.body.classList.remove('figma-header-ready');
 
-  /* -------------------------------------------------------
-     Data: Indonesian craft & heritage quotes
-     ------------------------------------------------------- */
+  
   var quotes = [
     { text: '"Setiap goresan tangan adalah cerita yang abadi dari Nusantara."',                         cite: '— Pepatah Nusantara' },
     { text: '"Bersama Karya Lokal, kerajinan tangan saya menjangkau pecinta seni di seluruh nusantara."', cite: '— Siti Aminah, Pengrajin Tenun' },
@@ -28,9 +21,7 @@
     { text: '"Songket adalah emas yang ditenun, mengalir dari generasi ke generasi."',                    cite: '— Pepatah Palembang' }
   ];
 
-  /* -------------------------------------------------------
-     Data: Background images
-     ------------------------------------------------------- */
+  
   var bgImages = [
     '../assets/images/df76563238df56947a3b7ac4b3423243b5643aed.png',
     '../assets/images/3c72c6c67e3cf1df65312494e32414a36d4f14d3.png',
@@ -49,9 +40,7 @@
   var FADE_MS        = 500;
   var SLIDE_MS       = 700;   // must match --slide-duration in CSS
 
-  /* -------------------------------------------------------
-     DOM references
-     ------------------------------------------------------- */
+  
   var container       = document.getElementById('authContainer');
   var imagePanel      = document.querySelector('.image-panel');
   var loginContent    = document.getElementById('loginContent');
@@ -65,9 +54,7 @@
   var currentImgIdx   = Math.floor(Math.random() * bgImages.length);
   var isAnimating     = false;
 
-  /* -------------------------------------------------------
-     1. Background image crossfade setup
-     ------------------------------------------------------- */
+  
   function initBgLayers() {
     imagePanel.style.backgroundImage = 'none';
 
@@ -107,9 +94,7 @@
     img.src = bgImages[next];
   }
 
-  /* -------------------------------------------------------
-     2. Quote rotation
-     ------------------------------------------------------- */
+  
   function setQuote(idx) {
     if (!quoteText || !quoteCite) return;
     quoteText.textContent = quotes[idx].text;
@@ -137,9 +122,7 @@
     setInterval(rotateImage, IMAGE_INTERVAL);
   }
 
-  /* -------------------------------------------------------
-     3. Sliding Panel Swap
-     ------------------------------------------------------- */
+  
   function showLogin() {
     if (isAnimating) return;
     if (!container.classList.contains('register-mode')) return;
@@ -186,9 +169,7 @@
     }, SLIDE_MS + 100);
   }
 
-  /* -------------------------------------------------------
-     4. Toggle links — event delegation
-     ------------------------------------------------------- */
+  
   document.addEventListener('click', function (e) {
     var link = e.target.closest('.toggle-auth-link');
     if (!link) return;
@@ -205,9 +186,7 @@
     }
   });
 
-  /* -------------------------------------------------------
-     5. Handle URL hash on load (#register)
-     ------------------------------------------------------- */
+  
   if (window.location.hash === '#register') {
     // instant switch — skip animation
     loginContent.classList.remove('is-active');
@@ -216,9 +195,7 @@
     document.title = 'Daftar — Karya Lokal';
   }
 
-  /* -------------------------------------------------------
-     6. Password visibility toggle
-     ------------------------------------------------------- */
+  
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('.toggle-password');
     if (!btn) return;
@@ -240,9 +217,7 @@
     }
   });
 
-  /* -------------------------------------------------------
-     7. Form submit handlers
-     ------------------------------------------------------- */
+  
   /* Login form submit is handled inline in login.html to avoid double-registration */
 
   var regForm = document.getElementById('registerForm');

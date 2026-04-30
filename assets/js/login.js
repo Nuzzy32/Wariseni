@@ -1,7 +1,3 @@
-/* ===========================
-   Login Page — Karya Lokal
-   =========================== */
-
 (function () {
   'use strict';
 

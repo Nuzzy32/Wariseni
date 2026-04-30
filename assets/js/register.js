@@ -1,7 +1,3 @@
-/* ===========================
-   Register Page — Karya Lokal
-   =========================== */
-
 (function () {
   'use strict';
 
