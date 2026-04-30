@@ -2069,7 +2069,6 @@ function bindMarketplaceFilters() {
       return card;
     });
 
-    // Sort
     const sortVal = sortSelect?.value || "default";
     if (sortVal === "price-asc") {
       filteredCards.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
@@ -2106,10 +2105,8 @@ function bindMarketplaceFilters() {
     if (prevBtn) prevBtn.classList.toggle("is-disabled", currentPage === 1);
     if (nextBtn) nextBtn.classList.toggle("is-disabled", currentPage === totalPages);
 
-    // Remove old page number buttons
     paginationRow.querySelectorAll("[data-page-num]").forEach((el) => el.remove());
 
-    // Build page number list
     getPageNumbers(currentPage, totalPages).forEach((p) => {
       if (p === "...") {
         const el = document.createElement("span");

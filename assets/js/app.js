@@ -101,7 +101,6 @@
       layerB.className = 'bg-layer inactive';
       activeBg = 'a';
     }
-    // preload next
     var img = new Image();
     img.src = bgImages[(currentImgIdx + 1) % bgImages.length];
   }
@@ -154,7 +153,6 @@
     setTimeout(function () { isAnimating = false; container.classList.remove('is-animating'); }, SLIDE_MS + 100);
   }
 
-  // Toggle links (event delegation)
   document.addEventListener('click', function (e) {
     var link = e.target.closest('.toggle-auth-link');
     if (!link) return;
@@ -166,7 +164,6 @@
     }
   });
 
-  // Hash on load
   if (window.location.hash === '#register') {
     loginContent.classList.remove('is-active');
     container.classList.add('register-mode');
@@ -198,7 +195,6 @@
           el.className = 'petal';
           el.innerHTML = petalSVG;
 
-          // random properties
           var size    = 18 + Math.random() * 22;                     // 18–40px
           var startX  = Math.random() * 100;                          // % from left
           var driftX  = (Math.random() - 0.5) * 200;                 // px drift left/right
@@ -215,7 +211,6 @@
 
           particleLayer.appendChild(el);
 
-          // cleanup
           setTimeout(function () {
             if (el.parentNode) el.parentNode.removeChild(el);
           }, dur * 1000 + 200);
@@ -260,36 +255,27 @@
     if (gateOpened) return;
     gateOpened = true;
 
-    // Stop quote/image rotation
     clearInterval(quoteTimer);
     clearInterval(imageTimer);
 
-    // Play angklung sound
     if (angklungAudio) {
       angklungAudio.play().catch(function () { /* no audio file — silent fallback */ });
     }
 
-    // 1. Spawn flower particles
     spawnPetals();
 
-    // 2. Add gate-open class → panels slide apart
     overlay.classList.add('is-opening');
 
-    // 3. After gate finishes sliding, reveal landing page
     setTimeout(function () {
-      // Mark overlay as fully opened (hidden)
       overlay.classList.add('is-opened');
 
-      // Unlock body scroll
       document.body.classList.remove('auth-active');
 
-      // Trigger scroll-based reveal on landing page
       if (landing) {
         landing.classList.add('is-loaded');
         initScrollReveal();
       }
 
-      // Update page title
       document.title = 'Karya Lokal — Platform Kerajinan Indonesia';
     }, GATE_MS);
   }
@@ -315,7 +301,6 @@
         alert('Kata sandi tidak cocok. Silakan periksa kembali.');
         return;
       }
-      // After register, also open the gate
       openGate();
     });
   }

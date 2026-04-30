@@ -103,7 +103,6 @@
       layers.which = 'a';
     }
 
-    // preload
     var img = new Image();
     img.src = bgImages[next];
   }
@@ -148,21 +147,16 @@
     isAnimating = true;
     container.classList.add('is-animating');
 
-    // fade out register content immediately
     registerContent.classList.remove('is-active');
 
-    // slide panels
     container.classList.remove('register-mode');
 
-    // update page title
     document.title = 'Masuk — Karya Lokal';
 
-    // fade in login content after panels start sliding
     setTimeout(function () {
       loginContent.classList.add('is-active');
     }, 50);
 
-    // unlock after transition ends
     setTimeout(function () {
       isAnimating = false;
       container.classList.remove('is-animating');
@@ -176,16 +170,12 @@
     isAnimating = true;
     container.classList.add('is-animating');
 
-    // fade out login content immediately
     loginContent.classList.remove('is-active');
 
-    // slide panels
     container.classList.add('register-mode');
 
-    // update page title
     document.title = 'Daftar — Karya Lokal';
 
-    // fade in register content after panels start sliding
     setTimeout(function () {
       registerContent.classList.add('is-active');
     }, 50);

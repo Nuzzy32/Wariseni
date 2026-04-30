@@ -10,10 +10,8 @@
 </head>
 <body class="bg-stone-50 font-sans text-slate-900 antialiased" data-page="marketplace">
 
-  <!-- Main -->
   <main id="marketplace-main" class="mx-auto max-w-[1280px] px-8 py-8" data-marketplace>
 
-    <!-- Page heading -->
     <div class="mb-8" data-reveal>
       <h1 class="text-3xl font-bold text-slate-900">Koleksi Nusantara</h1>
       <p class="mt-1.5 text-base text-stone-500" data-results-count>Menampilkan 18 produk kerajinan tangan terbaik</p>
@@ -21,11 +19,9 @@
 
     <div class="flex gap-8">
 
-      <!-- ===== Sidebar ===== -->
       <aside class="hidden w-64 shrink-0 lg:block" aria-label="Filter produk" data-reveal style="--reveal-delay:0.06s">
         <div class="space-y-6">
 
-          <!-- Kategori -->
           <div class="rounded-xl border border-stone-100 bg-white p-5 shadow-sm">
             <button class="flex w-full items-center justify-between text-sm font-bold uppercase tracking-wide text-slate-900" type="button" data-collapse-trigger="kategori" aria-expanded="true" aria-controls="filterKategori">
               Kategori
@@ -62,7 +58,6 @@
             </div>
           </div>
 
-          <!-- Harga -->
           <div class="rounded-xl border border-stone-100 bg-white p-5 shadow-sm">
             <button class="flex w-full items-center justify-between text-sm font-bold uppercase tracking-wide text-slate-900" type="button">
               Harga
@@ -94,7 +89,6 @@
             </div>
           </div>
 
-          <!-- Lokasi -->
           <div class="rounded-xl border border-stone-100 bg-white p-5 shadow-sm">
             <button class="flex w-full items-center justify-between text-sm font-bold uppercase tracking-wide text-slate-900" type="button">
               Lokasi
@@ -116,10 +110,8 @@
         </div>
       </aside>
 
-      <!-- ===== Product Area ===== -->
       <div class="flex-1 min-w-0" data-reveal style="--reveal-delay:0.1s">
 
-        <!-- Filter chips + Sort bar -->
         <div class="mb-6 flex items-center justify-between gap-4 rounded-lg border border-stone-100 bg-white p-3 shadow-sm">
           <div class="flex flex-wrap items-center gap-2" id="activeChips">
             <button class="rounded-md px-3 py-1.5 text-sm font-medium text-orange-600 transition hover:bg-orange-50" type="button" data-filter-reset>Reset Semua</button>
@@ -140,10 +132,8 @@
           </div>
         </div>
 
-        <!-- Product Grid -->
         <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3" aria-label="Daftar produk">
 
-          <!-- Card 1 -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="keramik" data-location="bali" data-price="150000" data-search="mug keramik handmade bali ubud pengrajin">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/marketplace/ceramic-mug.png" alt="Mug keramik handmade warna krem." />
@@ -170,7 +160,6 @@
             </div>
           </article>
 
-          <!-- Card 2 -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="aksesoris" data-location="lombok" data-price="250000" data-search="tas rotan bulat premium lombok aksesoris anyaman">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/marketplace/rattan-bag.png" alt="Tas rotan bulat anyaman." />
@@ -196,7 +185,6 @@
             </div>
           </article>
 
-          <!-- Card 3 -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="fashion" data-location="solo" data-price="1200000" data-search="kain batik tulis solo parang fashion">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/marketplace/batik-cloth.png" alt="Kain batik tulis Solo." />
@@ -222,7 +210,6 @@
             </div>
           </article>
 
-          <!-- Card 4 -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="home-decor" data-location="jepara" data-price="85000" data-search="mangkuk kayu jati ukir jepara home decor">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/marketplace/wooden-decor.png" alt="Dekor kayu jati minimalis." />
@@ -248,7 +235,6 @@
             </div>
           </article>
 
-          <!-- Card 5 -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="fashion" data-location="palembang" data-price="2500000" data-search="songket palembang gold fashion premium">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/marketplace/songket-fabric.png" alt="Songket Palembang." />
@@ -274,7 +260,6 @@
             </div>
           </article>
 
-          <!-- Card 6 -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="perawatan" data-location="aceh" data-price="35000" data-search="sabun organik kopi aceh perawatan alami">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/marketplace/natural-soap.png" alt="Sabun organik kopi." />
@@ -301,7 +286,6 @@
             </div>
           </article>
 
-          <!-- Card 7 -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="keramik" data-location="yogya" data-price="95000" data-search="gerabah kasongan yogyakarta keramik tanah liat">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/b175be3288918b1740487725749bb77976010078.png" alt="Gerabah Kasongan." />
@@ -327,7 +311,6 @@
             </div>
           </article>
 
-          <!-- Card 8 -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="aksesoris" data-location="yogya" data-price="750000" data-search="wayang kulit purwa yogyakarta aksesoris kesenian">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/dfddcca739dac8c74aa01423424a9277624961b5.png" alt="Wayang kulit Purwa." />
@@ -354,7 +337,6 @@
             </div>
           </article>
 
-          <!-- Card 9 -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="aksesoris" data-location="bali" data-price="65000" data-search="topi anyam pandan bali aksesoris pantai">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/269ae8e0d913d37f54a4f506a1c361c3221484e3.png" alt="Topi anyam pandan Bali." />
@@ -380,7 +362,6 @@
             </div>
           </article>
 
-          <!-- Card 10 -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="home-decor" data-location="bali" data-price="120000" data-search="set bambu makan bali home decor peralatan dapur">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/0a71935945cc4cb3d3b65c8f3e5de9ba14f37a59.png" alt="Set peralatan makan bambu." />
@@ -406,7 +387,6 @@
             </div>
           </article>
 
-          <!-- Card 11 -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="fashion" data-location="solo" data-price="350000" data-search="sarung tenun lurik solo fashion tradisional">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/4e220a2511b3c2934147afea453ec2912b42f9e7.png" alt="Sarung tenun lurik Solo." />
@@ -432,7 +412,6 @@
             </div>
           </article>
 
-          <!-- Card 12 -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="home-decor" data-location="solo" data-price="180000" data-search="hiasan dinding kulit wayang solo home decor">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/e994f7ce98979bfe05ee3151dbaeb37f3e2d8c99.png" alt="Hiasan dinding kulit ukir." />
@@ -459,7 +438,6 @@
             </div>
           </article>
 
-          <!-- Card 13–18 hidden cards (same pattern, needed for filter/pagination JS) -->
           <article class="marketplace-card group overflow-hidden rounded-xl border border-stone-100 bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] transition-shadow hover:shadow-md cursor-pointer" data-market-card data-category="keramik" data-location="yogya" data-price="200000" data-search="tembikar dekoratif yogyakarta keramik kasongan glazur">
             <div class="relative overflow-hidden bg-stone-100">
               <img class="h-72 w-full object-cover transition duration-500 group-hover:scale-105" src="../assets/images/b175be3288918b1740487725749bb77976010078.png" alt="Tembikar dekoratif glazur." />
@@ -521,9 +499,8 @@
             </div>
           </article>
 
-        </div><!-- /grid -->
+        </div>
 
-        <!-- Pagination -->
         <div class="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <div class="flex items-center gap-1.5" data-pagination>
             <button class="marketplace-pagination__nav flex h-9 w-9 items-center justify-center rounded-full border border-stone-200 bg-white text-stone-600 transition hover:border-orange-300 hover:text-orange-600 disabled:opacity-40" type="button" data-page-prev aria-label="Halaman sebelumnya">
@@ -537,11 +514,10 @@
         </div>
         <p class="mt-3 text-center text-sm font-medium text-orange-600 hover:text-orange-700 cursor-pointer">Lihat Semua Produk (124)</p>
 
-      </div><!-- /product area -->
-    </div><!-- /flex -->
+      </div>
+    </div>
   </main>
 
-  <!-- Footer -->
   <footer class="mt-16 border-t border-stone-200 bg-stone-900 text-white">
     <div class="h-1 bg-clay-600"></div>
     <div class="mx-auto max-w-[1280px] grid gap-12 px-8 pb-8 pt-16 md:grid-cols-[320px_1fr_1fr_1fr]">

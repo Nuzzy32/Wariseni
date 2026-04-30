@@ -10,14 +10,13 @@
 </head>
 <body class="bg-[#fdfbf7] font-sans text-slate-900" data-page="cart">
 
-  <!-- Header -->
   <header class="figma-header sticky top-0 z-50 border-b border-stone-100 bg-white/95 shadow-[0_1px_10px_rgba(15,23,42,0.06)] backdrop-blur-md">
     <div class="mx-auto flex h-[65px] max-w-[1280px] items-center justify-between gap-6 px-8">
       <a class="flex items-center gap-2.5 text-slate-900" href="../index.html" aria-label="Karya Lokal">
         <img class="h-8 w-8 shrink-0" src="../assets/icons/logo-bag.svg" alt="" aria-hidden="true" />
         <span class="text-xl font-extrabold leading-5 tracking-[-0.02em]">Karya<br />Lokal</span>
       </a>
-      <!-- Steps indicator -->
+
       <nav class="hidden items-center gap-2 md:flex" aria-label="Tahap checkout">
         <div class="flex items-center gap-2">
           <span class="flex h-7 w-7 items-center justify-center rounded-full bg-orange-600 text-xs font-bold text-white">1</span>
@@ -46,11 +45,9 @@
 
     <div class="mt-8 grid gap-8 lg:grid-cols-[1fr_380px]">
 
-      <!-- ===== Item List ===== -->
       <section aria-label="Item di keranjang" data-reveal style="--reveal-delay:0.06s">
         <ul class="space-y-4" id="cartItems">
 
-          <!-- Item 1 -->
           <li class="group flex gap-4 rounded-2xl border border-neutral-100 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5" data-cart-item>
             <a href="product-detail.html" class="h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-neutral-50 sm:h-28 sm:w-28">
               <img class="h-full w-full object-cover transition duration-300 group-hover:scale-105" src="../assets/images/45c1b9ce24d767168e8a6917143a8d3ff8224b2f.png" alt="Mangkuk Kayu Jati Solid" />
@@ -66,7 +63,7 @@
                 </button>
               </div>
               <div class="flex flex-wrap items-center justify-between gap-3">
-                <!-- Qty control -->
+
                 <div class="flex items-center gap-1 rounded-xl border border-neutral-200 bg-neutral-50 px-1 py-1">
                   <button class="flex h-7 w-7 items-center justify-center rounded-lg text-slate-500 transition hover:bg-white hover:text-orange-600 hover:shadow-sm" aria-label="Kurangi" data-qty-dec>
                     <svg class="h-3.5 w-3.5" viewBox="0 0 14 14" fill="none"><path d="M2 7h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -81,7 +78,6 @@
             </div>
           </li>
 
-          <!-- Item 2 (with discount badge) -->
           <li class="group flex gap-4 rounded-2xl border border-orange-100 bg-orange-50/40 p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5" data-cart-item>
             <a href="product-detail.html" class="h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-white sm:h-28 sm:w-28">
               <img class="h-full w-full object-cover transition duration-300 group-hover:scale-105" src="../assets/images/dfddcca739dac8c74aa01423424a9277624961b5.png" alt="Tas Rotan Bali Premium" />
@@ -117,7 +113,6 @@
             </div>
           </li>
 
-          <!-- Item 3 -->
           <li class="group flex gap-4 rounded-2xl border border-neutral-100 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5" data-cart-item>
             <a href="product-detail.html" class="h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-neutral-50 sm:h-28 sm:w-28">
               <img class="h-full w-full object-cover transition duration-300 group-hover:scale-105" src="../assets/images/9b4a56fce54be094169859886f23fb807948e612.png" alt="Kain Batik Tulis Solo" />
@@ -147,7 +142,6 @@
             </div>
           </li>
 
-          <!-- Item 4 -->
           <li class="group flex gap-4 rounded-2xl border border-neutral-100 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5" data-cart-item>
             <a href="product-detail.html" class="h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-neutral-50 sm:h-28 sm:w-28">
               <img class="h-full w-full object-cover transition duration-300 group-hover:scale-105" src="../assets/images/9ab933d51d82d72684a56b37945b280ce85af9c7.png" alt="Vas Keramik Minimalis" />
@@ -177,7 +171,6 @@
             </div>
           </li>
 
-          <!-- Item 5 -->
           <li class="group flex gap-4 rounded-2xl border border-neutral-100 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5" data-cart-item>
             <a href="product-detail.html" class="h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-neutral-50 sm:h-28 sm:w-28">
               <img class="h-full w-full object-cover transition duration-300 group-hover:scale-105" src="../assets/images/b175be3288918b1740487725749bb77976010078.png" alt="Art Print Wayang A3" />
@@ -207,7 +200,6 @@
             </div>
           </li>
 
-          <!-- Item 6 -->
           <li class="group flex gap-4 rounded-2xl border border-neutral-100 bg-white p-4 shadow-sm transition-shadow hover:shadow-md sm:p-5" data-cart-item>
             <a href="product-detail.html" class="h-24 w-24 shrink-0 overflow-hidden rounded-xl border border-neutral-100 bg-neutral-50 sm:h-28 sm:w-28">
               <img class="h-full w-full object-cover transition duration-300 group-hover:scale-105" src="../assets/images/2db159e91dfe7ca806ae7ad767ea0142e75bd374.png" alt="Gerabah Dekoratif Lombok" />
@@ -252,12 +244,10 @@
         </div>
       </section>
 
-      <!-- ===== Order Summary ===== -->
       <aside data-reveal style="--reveal-delay:0.12s">
         <div class="sticky top-[81px] rounded-2xl border border-neutral-100 bg-white p-6 shadow-sm">
           <h2 class="text-lg font-bold text-slate-900">Ringkasan Pesanan</h2>
 
-          <!-- Promo code -->
           <div class="mt-5">
             <label class="mb-1.5 block text-xs font-semibold uppercase tracking-widest text-slate-400" for="promoCode">Kode Promo</label>
             <div class="flex gap-2">
@@ -276,7 +266,6 @@
             </p>
           </div>
 
-          <!-- Delivery option -->
           <div class="mt-5">
             <p class="mb-2 text-xs font-semibold uppercase tracking-widest text-slate-400">Pengiriman</p>
             <div class="space-y-2">
@@ -307,7 +296,6 @@
             </div>
           </div>
 
-          <!-- Price breakdown -->
           <div class="mt-5 space-y-2.5 border-t border-neutral-100 pt-4">
             <div class="flex justify-between text-sm">
               <span class="text-slate-500">Subtotal (<span id="totalQty">7</span> item)</span>
@@ -328,7 +316,6 @@
             <span class="text-lg font-extrabold text-orange-600" id="grandTotalEl">Rp2.015.000</span>
           </div>
 
-          <!-- Trust badges -->
           <div class="mt-4 flex items-center justify-center gap-5 text-slate-400">
             <div class="flex items-center gap-1.5 text-xs">
               <svg class="h-4 w-4 shrink-0 text-emerald-500" viewBox="0 0 16 16" fill="none"><path d="M8 1.5 2 4v4c0 3.3 2.5 6.3 6 7 3.5-.7 6-3.7 6-7V4L8 1.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="m5 8 2 2 4-4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>

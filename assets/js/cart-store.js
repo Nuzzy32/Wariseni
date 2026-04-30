@@ -53,7 +53,6 @@
     try {
       window.localStorage.setItem(key, JSON.stringify(value));
     } catch (error) {
-      // Storage can be blocked in private contexts. The UI still works in memory.
     }
   };
 
