@@ -1,8 +1,3 @@
-/* ===========================
-   Auction Page — Karya Lokal
-   Countdown Timers + Bid Modal
-   =========================== */
-
 (function () {
   'use strict';
 
