@@ -323,6 +323,7 @@ function renderOverviewProductListings() {
 }
 
 function renderSalesLineChart() {
+  return;
   var root = document.querySelector("[data-sales-chart]");
   if (!root) return;
 
@@ -721,7 +722,7 @@ function renderSellerOrders() {
 
   var revenueEl = document.querySelector("[data-dashboard-revenue]");
   var activeEl = document.querySelector("[data-dashboard-active-orders]");
-  if (revenueEl) revenueEl.textContent = sellerRupiah(revenue || 8400000);
+  if (revenueEl) revenueEl.textContent = sellerRupiah(0);
   if (activeEl) activeEl.textContent = active || 3;
 
   document.querySelectorAll("[data-dashboard-orders]").forEach(function (body) {
